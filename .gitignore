@@ -1,0 +1,14 @@
+# data (never commit — re-downloaded via Kaggle API)
+data/raw/
+data/processed/
+*.zip
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# secrets
+.env
+*.pem
