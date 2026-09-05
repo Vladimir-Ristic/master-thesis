@@ -8,3 +8,6 @@ shap
 mlflow
 fastapi
 uvicorn
+psycopg2-binary
+sqlalchemy
+python-dotenv
