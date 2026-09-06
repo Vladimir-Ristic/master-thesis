@@ -1,0 +1,5 @@
+card6,transaction_count,fraud_rate
+credit,148986,0.06678479857167788
+debit,439938,0.024262509717278342
+charge card,15,0.0
+debit or credit,30,0.0
