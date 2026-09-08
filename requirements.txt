@@ -13,3 +13,6 @@ sqlalchemy
 python-dotenv
 matplotlib
 seaborn
+pyarrow
+joblib
+pytest

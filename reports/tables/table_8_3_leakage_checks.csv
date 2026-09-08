@@ -1,0 +1,9 @@
+Check,Result,Detail
+Identical feature contract across partitions,PASS,"290 features, order preserved"
+Target and key absent from feature matrix,PASS,clean
+No transaction appears in two partitions,PASS,disjoint
+Partitions are strictly chronological,PASS,train 1-119 -> valid 127-154 -> test 155-182
+Embargo interval is empty and wide enough,PASS,"7 day gap, widest feature window is 7 days"
+No constant features in the training partition,PASS,none
+No single feature separates the classes,PASS,highest single-feature ROC-AUC 0.744 (d5)
+End-to-end probe score is plausible,PASS,validation PR-AUC 0.5268

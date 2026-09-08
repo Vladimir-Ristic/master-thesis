@@ -1,0 +1,13 @@
+Feature family,Count
+Anonymised V (retained),143
+Identity,31
+Entity aggregation,24
+Named / business,15
+D (timedelta),15
+C (counting),14
+Missingness,12
+Frequency encoding,11
+M (match flag),9
+Temporal,7
+Email,5
+Amount,4

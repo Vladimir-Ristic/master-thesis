@@ -1,0 +1,72 @@
+python3 -m src.features.validate
+                                         Check Result                                       Detail
+  Identical feature contract across partitions   PASS                290 features, order preserved
+     Target and key absent from feature matrix   PASS                                        clean
+      No transaction appears in two partitions   PASS                                     disjoint
+         Partitions are strictly chronological   PASS train 1-119 -> valid 127-154 -> test 155-182
+     Embargo interval is empty and wide enough   PASS   7 day gap, widest feature window is 7 days
+No constant features in the training partition   PASS                                         none
+       No single feature separates the classes   PASS    highest single-feature ROC-AUC 0.744 (d5)
+           End-to-end probe score is plausible   PASS                     validation PR-AUC 0.5268
+
+Top single-feature ROC-AUC (training partition):
+feature      auc  coverage
+     d5 0.744010  0.457495
+   v219 0.733254  0.244885
+   v264 0.732043  0.244885
+   v263 0.708912  0.244885
+     d2 0.704202  0.499815
+     d3 0.702219  0.527925
+   v246 0.701440  0.244885
+    v52 0.698645  0.702990
+   v275 0.698291  0.244885
+   v231 0.688383  0.244885
+
+Leakage probe (untuned LightGBM, not a Chapter 9 result):
+         pr_auc   roc_auc  positive_rate
+train  0.765846  0.954637       0.035117
+valid  0.526827  0.905796       0.033885
+test   0.518356  0.898424       0.035319
+
+Top 15 probe feature importances:
+uid_account_freq      259
+transactionamt        173
+card1                 172
+card2_freq            164
+c13                   148
+addr1_freq            136
+card1_freq            127
+c1                    122
+card2                 121
+uid_card_addr_freq    110
+addr1                 108
+d2                    107
+d15                   100
+card_cnt_hist          94
+c14                    80
+
+Unseen-category exposure:
+partition    feature  unseen_share
+     test      id_31      0.102709
+     test      id_13      0.046688
+     test deviceinfo      0.006060
+    valid deviceinfo      0.004138
+     test      id_30      0.001782
+     test      id_33      0.001490
+    valid      id_33      0.001054
+    valid      id_20      0.000617
+     test      id_19      0.000331
+     test      id_20      0.000318
+
+Missingness drift train -> test:
+     train_missing  test_missing  abs_delta
+m7        0.671184      0.392185   0.278999
+m8        0.671175      0.392185   0.278990
+m9        0.671175      0.392185   0.278990
+d11       0.547970      0.289781   0.258189
+v1        0.547970      0.289781   0.258189
+v10       0.547970      0.289781   0.258189
+v3        0.547970      0.289781   0.258189
+v5        0.547970      0.289781   0.258189
+v7        0.547970      0.289781   0.258189
+v2        0.547970      0.289781   0.258189
