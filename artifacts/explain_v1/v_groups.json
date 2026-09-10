@@ -1,0 +1,275 @@
+{
+  "provenance": {
+    "source": "replay of encoders.fit_v_reduction blocking rule",
+    "frame": "data/interim/vcols.parquet",
+    "rows_sampled": 150000,
+    "sample_seed": 42,
+    "retained_from": "data/processed/train_v1.parquet",
+    "merged_from": [
+      126199,
+      126305
+    ]
+  },
+  "groups": [
+    {
+      "group": "V01",
+      "missing_count": 0,
+      "missing_share": 0.0,
+      "n_before": 43,
+      "n_after": 24,
+      "columns": [
+        "v95",
+        "v96",
+        "v98",
+        "v100",
+        "v103",
+        "v104",
+        "v105",
+        "v108",
+        "v109",
+        "v111",
+        "v115",
+        "v116",
+        "v117",
+        "v118",
+        "v120",
+        "v121",
+        "v123",
+        "v124",
+        "v126",
+        "v127",
+        "v129",
+        "v130",
+        "v134",
+        "v136"
+      ]
+    },
+    {
+      "group": "V02",
+      "missing_count": 3,
+      "missing_share": 2e-05,
+      "n_before": 32,
+      "n_after": 14,
+      "columns": [
+        "v284",
+        "v285",
+        "v286",
+        "v293",
+        "v298",
+        "v299",
+        "v303",
+        "v305",
+        "v306",
+        "v307",
+        "v309",
+        "v310",
+        "v316",
+        "v320"
+      ]
+    },
+    {
+      "group": "V03",
+      "missing_count": 102,
+      "missing_share": 0.00068,
+      "n_before": 11,
+      "n_after": 8,
+      "columns": [
+        "v281",
+        "v282",
+        "v283",
+        "v288",
+        "v296",
+        "v301",
+        "v313",
+        "v314"
+      ]
+    },
+    {
+      "group": "V04",
+      "missing_count": 22272,
+      "missing_share": 0.14848,
+      "n_before": 23,
+      "n_after": 8,
+      "columns": [
+        "v13",
+        "v14",
+        "v18",
+        "v20",
+        "v24",
+        "v26",
+        "v27",
+        "v30"
+      ]
+    },
+    {
+      "group": "V05",
+      "missing_count": 22746,
+      "missing_share": 0.15164,
+      "n_before": 22,
+      "n_after": 8,
+      "columns": [
+        "v54",
+        "v56",
+        "v60",
+        "v62",
+        "v65",
+        "v67",
+        "v68",
+        "v70"
+      ]
+    },
+    {
+      "group": "V06",
+      "missing_count": 24829,
+      "missing_share": 0.165527,
+      "n_before": 20,
+      "n_after": 9,
+      "columns": [
+        "v76",
+        "v78",
+        "v81",
+        "v82",
+        "v87",
+        "v88",
+        "v89",
+        "v91",
+        "v94"
+      ]
+    },
+    {
+      "group": "V07",
+      "missing_count": 44564,
+      "missing_share": 0.297093,
+      "n_before": 18,
+      "n_after": 9,
+      "columns": [
+        "v36",
+        "v38",
+        "v40",
+        "v41",
+        "v45",
+        "v46",
+        "v47",
+        "v48",
+        "v52"
+      ]
+    },
+    {
+      "group": "V08",
+      "missing_count": 81924,
+      "missing_share": 0.54616,
+      "n_before": 11,
+      "n_after": 7,
+      "columns": [
+        "v1",
+        "v2",
+        "v3",
+        "v5",
+        "v7",
+        "v8",
+        "v10"
+      ]
+    },
+    {
+      "group": "V09",
+      "missing_count": 110848,
+      "missing_share": 0.738987,
+      "n_before": 16,
+      "n_after": 7,
+      "columns": [
+        "v220",
+        "v222",
+        "v234",
+        "v239",
+        "v245",
+        "v251",
+        "v271"
+      ]
+    },
+    {
+      "group": "V10",
+      "missing_count": 111407,
+      "missing_share": 0.742713,
+      "n_before": 19,
+      "n_after": 10,
+      "columns": [
+        "v169",
+        "v175",
+        "v180",
+        "v185",
+        "v188",
+        "v194",
+        "v198",
+        "v201",
+        "v209",
+        "v210"
+      ]
+    },
+    {
+      "group": "V11",
+      "missing_count": 111409,
+      "missing_share": 0.742727,
+      "n_before": 31,
+      "n_after": 8,
+      "columns": [
+        "v167",
+        "v173",
+        "v181",
+        "v202",
+        "v203",
+        "v206",
+        "v211",
+        "v216"
+      ]
+    },
+    {
+      "group": "V12",
+      "missing_count": 113477,
+      "missing_share": 0.756513,
+      "n_before": 46,
+      "n_after": 16,
+      "columns": [
+        "v219",
+        "v223",
+        "v226",
+        "v231",
+        "v237",
+        "v240",
+        "v246",
+        "v252",
+        "v260",
+        "v262",
+        "v263",
+        "v264",
+        "v266",
+        "v273",
+        "v275",
+        "v278"
+      ]
+    },
+    {
+      "group": "V13",
+      "missing_count": 126199,
+      "missing_share": 0.841327,
+      "n_before": 47,
+      "n_after": 15,
+      "columns": [
+        "v322",
+        "v323",
+        "v325",
+        "v328",
+        "v329",
+        "v332",
+        "v335",
+        "v339",
+        "v138",
+        "v140",
+        "v142",
+        "v147",
+        "v156",
+        "v160",
+        "v162"
+      ]
+    }
+  ]
+}
