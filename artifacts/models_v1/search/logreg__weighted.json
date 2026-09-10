@@ -1,0 +1,29 @@
+{
+  "arm_id": "logreg__weighted",
+  "model": "logreg",
+  "imbalance_arm": "weighted",
+  "description": "logreg; class weighting; median-imputed, standardised",
+  "best_params": {
+    "C": 1.0
+  },
+  "n_trials_run": 4,
+  "n_pruned": 1,
+  "search_seconds": 259.8,
+  "pr_auc_mean": 0.39784579653572805,
+  "pr_auc_std": 0.022039637595226785,
+  "pr_auc_folds": [
+    0.38834862031493733,
+    0.4283037442427146,
+    0.3768850250495322
+  ],
+  "fit_seconds": 105.9,
+  "fingerprint": {
+    "profile": "search",
+    "n_rows": 410601,
+    "n_features": 290,
+    "day_min": 1,
+    "day_max": 119,
+    "n_folds": 3,
+    "purge_days": 7
+  }
+}

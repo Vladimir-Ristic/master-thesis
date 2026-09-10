@@ -1,0 +1,29 @@
+{
+  "arm_id": "logreg__natural",
+  "model": "logreg",
+  "imbalance_arm": "natural",
+  "description": "logreg; natural distribution; median-imputed, standardised",
+  "best_params": {
+    "C": 0.001
+  },
+  "n_trials_run": 4,
+  "n_pruned": 1,
+  "search_seconds": 249.6,
+  "pr_auc_mean": 0.4097338003999534,
+  "pr_auc_std": 0.022142305268958242,
+  "pr_auc_folds": [
+    0.4209174124206996,
+    0.42947216692279994,
+    0.3788118218563608
+  ],
+  "fit_seconds": 42.9,
+  "fingerprint": {
+    "profile": "search",
+    "n_rows": 410601,
+    "n_features": 290,
+    "day_min": 1,
+    "day_max": 119,
+    "n_folds": 3,
+    "purge_days": 7
+  }
+}

@@ -244,6 +244,22 @@ ax.set_title("")
 plt.tight_layout()
 plt.savefig(f"{FIG_DIR}/fig_7_5_correlation.png", dpi=300)
 plt.close()
+
+# %% Identity linkage vs. fraud rate
+tx['has_identity'] = tx['transactionid'].isin(idn['transactionid'])
+linkage_tbl = tx.groupby('has_identity')['isfraud'].agg(['count', 'mean'])
+linkage_tbl.columns = ['transaction_count', 'fraud_rate']
+log(f"### Fraud rate by identity linkage\n{linkage_tbl.to_string()}")
+linkage_tbl.to_csv(f"reports/tables/table_7_identity_linkage.csv")
+
+# %% DeviceType breakdown
+tx_idn = tx[['transactionid', 'isfraud']].merge(
+    idn[['transactionid', 'devicetype']], on='transactionid', how='inner'
+)
+device_tbl = tx_idn.groupby('devicetype')['isfraud'].agg(['count', 'mean']).sort_values('mean', ascending=False)
+device_tbl.columns = ['transaction_count', 'fraud_rate']
+log(f"### Fraud rate by DeviceType (identity-linked transactions only)\n{device_tbl.to_string()}")
+device_tbl.to_csv(f"reports/tables/table_7_devicetype.csv")
 # %% Write Summary
 with open(LOG_PATH, "w") as f:
     f.write("\n\n".join(log_lines))

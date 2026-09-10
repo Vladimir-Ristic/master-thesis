@@ -16,3 +16,4 @@ seaborn
 pyarrow
 joblib
 pytest
+optuna

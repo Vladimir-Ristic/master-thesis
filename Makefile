@@ -1,3 +1,4 @@
+-include Makefile.ch9
 .PHONY: ch8 ch8-extract ch8-build ch8-validate ch8-figures ch8-publish ch8-test ch8-clean
 
 PY := python3

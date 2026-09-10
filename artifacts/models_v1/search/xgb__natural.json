@@ -1,0 +1,37 @@
+{
+  "arm_id": "xgb__natural",
+  "model": "xgb",
+  "imbalance_arm": "natural",
+  "description": "xgb; natural distribution; native missing handling",
+  "best_params": {
+    "n_estimators": 700,
+    "learning_rate": 0.021167142106007453,
+    "max_depth": 8,
+    "min_child_weight": 1.5799846214655338,
+    "subsample": 0.7301358902865294,
+    "colsample_bytree": 0.682273624809682,
+    "reg_alpha": 0.5590174882781456,
+    "reg_lambda": 0.2947876445535183,
+    "gamma": 0.0038715398865466037
+  },
+  "n_trials_run": 20,
+  "n_pruned": 6,
+  "search_seconds": 1643.6,
+  "pr_auc_mean": 0.5933173907273515,
+  "pr_auc_std": 0.018810483993843004,
+  "pr_auc_folds": [
+    0.5759236177741115,
+    0.6194453976201205,
+    0.5845831567878224
+  ],
+  "fit_seconds": 110.3,
+  "fingerprint": {
+    "profile": "search",
+    "n_rows": 410601,
+    "n_features": 290,
+    "day_min": 1,
+    "day_max": 119,
+    "n_folds": 3,
+    "purge_days": 7
+  }
+}

@@ -1,0 +1,288 @@
+python3 -m src.models.grid
+
+<Partition train: 410,601 rows x 290 features, days 1-119, prevalence 3.5117%>
+profile=search  trials/boosting arm=20  logreg grid=4
+  fold 1: train d1-22 (98,612 rows) | purge d23-29 | valid d30-58 (87,436 rows)
+  fold 2: train d1-51 (198,850 rows) | purge d52-58 | valid d59-87 (87,923 rows)
+  fold 3: train d1-80 (285,426 rows) | purge d81-87 | valid d88-119 (104,274 rows)
+
+ fold train_days  train_rows  train_fraud_rate purge_days valid_days  valid_rows  valid_fraud_rate
+    1       1-22       98612          0.025727      23-29      30-58       87436          0.039560
+    2       1-51      198850          0.029932      52-58      59-87       87923          0.041843
+    3       1-80      285426          0.033539      81-87     88-119      104274          0.038725
+
+[1/12] logreg__natural: searching
+🏃 View run trial::logreg__natural::0 at: http://localhost:5000/#/experiments/1/runs/95c083e9fc5149678f371534ae8bd2db
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::logreg__natural::1 at: http://localhost:5000/#/experiments/1/runs/b4917bdd7c2245e7b8f4748abbffed3e
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::logreg__natural::2 at: http://localhost:5000/#/experiments/1/runs/ce1a7b8f712a4a78aee6d2d9b357412e
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::logreg__natural at: http://localhost:5000/#/experiments/1/runs/4fd3e7165ede434580a183649f9a46a1
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.4097 (sd 0.0221) over 4 trials, 1 pruned, 250s
+
+[2/12] logreg__weighted: searching
+🏃 View run trial::logreg__weighted::0 at: http://localhost:5000/#/experiments/1/runs/cb8fcb49aaa149f88db56c23c83b724b
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::logreg__weighted::1 at: http://localhost:5000/#/experiments/1/runs/62f1f530abec489b8fd7ca52aa112cf5
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::logreg__weighted::2 at: http://localhost:5000/#/experiments/1/runs/b8956196591d4ec693f7d703e30b7c7b
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::logreg__weighted at: http://localhost:5000/#/experiments/1/runs/52418db617034f9283aee43ca90180f8
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.3978 (sd 0.0220) over 4 trials, 1 pruned, 260s
+
+[3/12] logreg__smote: searching
+🏃 View run trial::logreg__smote::0 at: http://localhost:5000/#/experiments/1/runs/91ec53c92910400388211fe85b4c4152
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::logreg__smote::1 at: http://localhost:5000/#/experiments/1/runs/ed12667379534affb2681d6ff93167d1
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::logreg__smote::2 at: http://localhost:5000/#/experiments/1/runs/afa9eb94bf6044f68155bba0600dba68
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::logreg__smote at: http://localhost:5000/#/experiments/1/runs/6570ad618cd742349bd4d0cc4d128261
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.4079 (sd 0.0228) over 4 trials, 1 pruned, 231s
+
+[4/12] logreg__smote_weighted: searching
+🏃 View run trial::logreg__smote_weighted::0 at: http://localhost:5000/#/experiments/1/runs/e9088bc62af24742af6503ab2cffbb1e
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::logreg__smote_weighted::1 at: http://localhost:5000/#/experiments/1/runs/2f83202ab89e4d6c84a3d0e200708759
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::logreg__smote_weighted::2 at: http://localhost:5000/#/experiments/1/runs/d65f5cc192e24230acdd4b5e14f3e5af
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::logreg__smote_weighted at: http://localhost:5000/#/experiments/1/runs/8585d6203aa549f08428f930ceb490bd
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.3941 (sd 0.0216) over 4 trials, 1 pruned, 292s
+
+[5/12] lgbm__natural: cached, skipping
+
+[6/12] lgbm__weighted: searching
+🏃 View run trial::lgbm__weighted::0 at: http://localhost:5000/#/experiments/1/runs/b368e1e50543412e8f3daa609c0f9b67
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::1 at: http://localhost:5000/#/experiments/1/runs/2337cd1b493c487b9139b2f6ee637207
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::2 at: http://localhost:5000/#/experiments/1/runs/ff0e69fc73fb4c46ab7340df24292fc2
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::5 at: http://localhost:5000/#/experiments/1/runs/2a751f32bf904cbaa5615430e36f4d49
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::6 at: http://localhost:5000/#/experiments/1/runs/e2a041e1e78d478ab01052d85f348b92
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::10 at: http://localhost:5000/#/experiments/1/runs/07ec27a624644b13b038a68d869b992f
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::11 at: http://localhost:5000/#/experiments/1/runs/2ba6ab10f4254988a15e6c26278f2ca0
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::12 at: http://localhost:5000/#/experiments/1/runs/1b0a32c49ff241079a8c70d99be825dc
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::13 at: http://localhost:5000/#/experiments/1/runs/6b314faead2d40b693ca3988b88e8ccb
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::14 at: http://localhost:5000/#/experiments/1/runs/9e1e5a5d76fc487690119487f5cabff8
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::17 at: http://localhost:5000/#/experiments/1/runs/a6066eb1ac82453c91ee3f6378b69e6a
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::18 at: http://localhost:5000/#/experiments/1/runs/e438c98069984c98afdcef74dfcbfb28
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__weighted::19 at: http://localhost:5000/#/experiments/1/runs/190d768083044f349b971518a6a262d2
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::lgbm__weighted at: http://localhost:5000/#/experiments/1/runs/eab4d218b93f402aa9bfa0a11286399d
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.6052 (sd 0.0193) over 20 trials, 7 pruned, 3211s
+
+[7/12] lgbm__smote: searching
+🏃 View run trial::lgbm__smote::0 at: http://localhost:5000/#/experiments/1/runs/fa0ee014cf2a4a50a5c2b56b468c4eb8
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::1 at: http://localhost:5000/#/experiments/1/runs/10654960f33444ffbc218005929649a5
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::2 at: http://localhost:5000/#/experiments/1/runs/5b40abec14c34f5881bafdbf2bf4b31c
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::3 at: http://localhost:5000/#/experiments/1/runs/1717ae9c6f4c41609e8bac2d8d55447c
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::6 at: http://localhost:5000/#/experiments/1/runs/3e355c1b8e484138afca915d4423297e
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::8 at: http://localhost:5000/#/experiments/1/runs/c1ecd608051b43d69904e409585bd827
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::10 at: http://localhost:5000/#/experiments/1/runs/b794dfe45509497e8123637ff66c62cd
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::11 at: http://localhost:5000/#/experiments/1/runs/2e16f84ea59c41d18e4feb98ca5fccc2
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::12 at: http://localhost:5000/#/experiments/1/runs/47efe6c61d68422480903a0a06793fe1
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::13 at: http://localhost:5000/#/experiments/1/runs/99130be662074a2ca00ff99744c55040
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::14 at: http://localhost:5000/#/experiments/1/runs/52fdd141008b4d47ab27fad00cce565d
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::15 at: http://localhost:5000/#/experiments/1/runs/4dfc6c38fbf246a191ec4bfede93283e
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::17 at: http://localhost:5000/#/experiments/1/runs/2b47adb796ab450b81341831ab58ee3a
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote::18 at: http://localhost:5000/#/experiments/1/runs/cd7e03ff1bf8420e813c61e7a12cda9b
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::lgbm__smote at: http://localhost:5000/#/experiments/1/runs/c681b94562274a2cabee8f7b2248cead
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.5935 (sd 0.0132) over 20 trials, 6 pruned, 3236s
+
+[8/12] lgbm__smote_weighted: searching
+🏃 View run trial::lgbm__smote_weighted::0 at: http://localhost:5000/#/experiments/1/runs/22eafa185c624c39912069d16e43a08d
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote_weighted::1 at: http://localhost:5000/#/experiments/1/runs/b4b54995471a4ff79f450d15ceb3cc83
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote_weighted::2 at: http://localhost:5000/#/experiments/1/runs/a4fc8325b75e4427b0c2beea56be9427
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote_weighted::6 at: http://localhost:5000/#/experiments/1/runs/37501098518542178b4b8146c4be110e
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote_weighted::10 at: http://localhost:5000/#/experiments/1/runs/a6ecefeb9f9149e7baab7b094cd9acc9
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote_weighted::11 at: http://localhost:5000/#/experiments/1/runs/fc92e0a6dcc445ed9cec25931ca07fdc
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote_weighted::12 at: http://localhost:5000/#/experiments/1/runs/b660093d739d44418edc8e34ce4c5dd4
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote_weighted::17 at: http://localhost:5000/#/experiments/1/runs/3f369434e4204a8dacc5f38bc651c73e
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote_weighted::18 at: http://localhost:5000/#/experiments/1/runs/fdf65ec310544da19e43702cd5ca321f
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::lgbm__smote_weighted::19 at: http://localhost:5000/#/experiments/1/runs/a60bdf25ca2747d489ccf7e345b5d373
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::lgbm__smote_weighted at: http://localhost:5000/#/experiments/1/runs/c6b218e140eb4991ba29bba2426a20c4
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.5994 (sd 0.0160) over 20 trials, 10 pruned, 11864s
+
+[9/12] xgb__natural: searching
+🏃 View run trial::xgb__natural::0 at: http://localhost:5000/#/experiments/1/runs/3cabcc8852ca4923b5443a192ca388bf
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::1 at: http://localhost:5000/#/experiments/1/runs/6c5442b35cdf412a86c0f4048db122d2
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::2 at: http://localhost:5000/#/experiments/1/runs/105d8ba765a74a7cb85d033e2b42e43a
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::4 at: http://localhost:5000/#/experiments/1/runs/8e44166051444a90afa99fd1f9e6b6c6
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::5 at: http://localhost:5000/#/experiments/1/runs/49ee0dcbc0414a7d9375eadce343a55d
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::7 at: http://localhost:5000/#/experiments/1/runs/a68e9736ea5c4eed95f233a4b9c90ce5
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::10 at: http://localhost:5000/#/experiments/1/runs/f9c8a2be1d7d42e4b8dcab1f72832070
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::11 at: http://localhost:5000/#/experiments/1/runs/8018396227094562803c2428cfbbf81b
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::13 at: http://localhost:5000/#/experiments/1/runs/ab063b638f894c349d83519898c8e926
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::14 at: http://localhost:5000/#/experiments/1/runs/6e366ab1125c43048d7973292f86dc67
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::16 at: http://localhost:5000/#/experiments/1/runs/6806529d56a1479c8bb7c7976743cd34
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::17 at: http://localhost:5000/#/experiments/1/runs/769d7b2b9cfa4a8e93706deaadc83cde
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::18 at: http://localhost:5000/#/experiments/1/runs/73adbb1177a34311a87cc10aaa91696f
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__natural::19 at: http://localhost:5000/#/experiments/1/runs/583513965cb648d8b5e666d427edaee9
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::xgb__natural at: http://localhost:5000/#/experiments/1/runs/d759ccd4fda748e38bdafedc2b93205e
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.5933 (sd 0.0188) over 20 trials, 6 pruned, 1644s
+
+[10/12] xgb__weighted: searching
+🏃 View run trial::xgb__weighted::0 at: http://localhost:5000/#/experiments/1/runs/95e53d54e21241248e1d129a9dd8b1a0
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__weighted::1 at: http://localhost:5000/#/experiments/1/runs/dd483cf57d394e199bc188370bbc1ffe
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__weighted::2 at: http://localhost:5000/#/experiments/1/runs/e763e591141340219255e4545b53da72
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__weighted::5 at: http://localhost:5000/#/experiments/1/runs/192178628cdb40efa11e30e9e3a719dc
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__weighted::10 at: http://localhost:5000/#/experiments/1/runs/b5754f1649f24e9c9dd3cfc4f4698da5
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__weighted::11 at: http://localhost:5000/#/experiments/1/runs/fa5882340ee440e8ae59d8ba3b3840e0
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__weighted::12 at: http://localhost:5000/#/experiments/1/runs/48e648e9c1e342f888bbf2623c321078
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__weighted::14 at: http://localhost:5000/#/experiments/1/runs/f707fa485a8d49f3a22362e4a86ab420
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__weighted::15 at: http://localhost:5000/#/experiments/1/runs/3c714f52b81847c0a5bc4641c1083ebb
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__weighted::17 at: http://localhost:5000/#/experiments/1/runs/34f5b0b68d204b2d88e467834a4dd491
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__weighted::19 at: http://localhost:5000/#/experiments/1/runs/88eb787cebbf425e8be380fc00ae6851
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::xgb__weighted at: http://localhost:5000/#/experiments/1/runs/e6b9d3d92b64459aa8e02c8519e4d34a
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.5757 (sd 0.0250) over 20 trials, 9 pruned, 1497s
+
+[11/12] xgb__smote: searching
+🏃 View run trial::xgb__smote::0 at: http://localhost:5000/#/experiments/1/runs/f98e1c7708a2409e95c02b74651c9bb8
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::1 at: http://localhost:5000/#/experiments/1/runs/5c90e6aed11d4006a4159b6d80ca8add
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::2 at: http://localhost:5000/#/experiments/1/runs/5d3ea1e2784247e199d200e0f5360ea0
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::4 at: http://localhost:5000/#/experiments/1/runs/9077e9614f8646a2a388ad5850bb32f0
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::5 at: http://localhost:5000/#/experiments/1/runs/970fbd7a4d6143c498cfccf1edace19c
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::7 at: http://localhost:5000/#/experiments/1/runs/00c424ee977b4ab5b0fdf7fc2e939819
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::10 at: http://localhost:5000/#/experiments/1/runs/878cc6db37a54fc7985eac033c249c89
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::11 at: http://localhost:5000/#/experiments/1/runs/8356ce0ecfba4628a7b5243798f55037
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::12 at: http://localhost:5000/#/experiments/1/runs/20598e5a560742399a9c55d52f75333f
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::14 at: http://localhost:5000/#/experiments/1/runs/70bdee134e024a7d9c840bfd80e19bc4
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::16 at: http://localhost:5000/#/experiments/1/runs/7fd6e5c3d6bf4bcbab11514cad1b7158
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::17 at: http://localhost:5000/#/experiments/1/runs/1d64e75e1137479c9751cf0409079f8b
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote::19 at: http://localhost:5000/#/experiments/1/runs/1726b2f0782047d6bc464b4b781ee167
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::xgb__smote at: http://localhost:5000/#/experiments/1/runs/aadef49b7afe4f79a44d9a7324ff0ff4
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.5855 (sd 0.0141) over 20 trials, 7 pruned, 2347s
+
+[12/12] xgb__smote_weighted: searching
+🏃 View run trial::xgb__smote_weighted::0 at: http://localhost:5000/#/experiments/1/runs/f08d8aa7ceb34861a331bda2755d7850
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::1 at: http://localhost:5000/#/experiments/1/runs/b2cd9f733eae4ec1837733148617482e
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::2 at: http://localhost:5000/#/experiments/1/runs/e2690affe5ea4030af2bf5002052a4e2
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::4 at: http://localhost:5000/#/experiments/1/runs/ffc96d58433e430ab0d07bd816c829a9
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::5 at: http://localhost:5000/#/experiments/1/runs/c7ace599726c4dac9dc2ae7b390400db
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::7 at: http://localhost:5000/#/experiments/1/runs/1ade71573a514918b0a2fb912cd269cc
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::10 at: http://localhost:5000/#/experiments/1/runs/aa50df1e1dcd492ab6a4ad6db3073126
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::11 at: http://localhost:5000/#/experiments/1/runs/ff59f0a502f14c90b8816e52952f484b
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::12 at: http://localhost:5000/#/experiments/1/runs/4089794a18db42c2918c5e0e311a796f
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::13 at: http://localhost:5000/#/experiments/1/runs/9473f963acab43429d798a670675ca90
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::15 at: http://localhost:5000/#/experiments/1/runs/8ce5a79e1805442a8c2917efe02f70c1
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::16 at: http://localhost:5000/#/experiments/1/runs/66e5f1c17f814aa3a23226be9f5f1ee8
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::17 at: http://localhost:5000/#/experiments/1/runs/0974ca3498eb4f80908123a682536bed
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run trial::xgb__smote_weighted::19 at: http://localhost:5000/#/experiments/1/runs/cfb8ba37b67f4711ad20f7302c50768c
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+🏃 View run search::xgb__smote_weighted at: http://localhost:5000/#/experiments/1/runs/b911d84c147d40bab6357797b8451174
+🧪 View experiment at: http://localhost:5000/#/experiments/1
+    cv PR-AUC 0.5717 (sd 0.0116) over 20 trials, 6 pruned, 3413s
+
+=== search complete ===
+                arm_id  model  imbalance_arm  pr_auc_mean  pr_auc_std  n_trials_run  n_pruned  search_seconds
+         lgbm__natural   lgbm        natural     0.610323    0.018367            20         4          2273.3
+        lgbm__weighted   lgbm       weighted     0.605171    0.019281            20         7          3210.8
+  lgbm__smote_weighted   lgbm smote_weighted     0.599355    0.015971            20        10         11864.5
+           lgbm__smote   lgbm          smote     0.593518    0.013156            20         6          3236.4
+          xgb__natural    xgb        natural     0.593317    0.018810            20         6          1643.6
+            xgb__smote    xgb          smote     0.585521    0.014085            20         7          2346.8
+         xgb__weighted    xgb       weighted     0.575738    0.024960            20         9          1497.3
+   xgb__smote_weighted    xgb smote_weighted     0.571730    0.011588            20         6          3413.1
+       logreg__natural logreg        natural     0.409734    0.022142             4         1           249.6
+         logreg__smote logreg          smote     0.407877    0.022764             4         1           231.1
+      logreg__weighted logreg       weighted     0.397846    0.022040             4         1           259.8
+logreg__smote_weighted logreg smote_weighted     0.394139    0.021624             4         1           292.1
+
+written to /home/vladimir/projects/master-thesis/reports/tables/table_9_2_arm_search.csv

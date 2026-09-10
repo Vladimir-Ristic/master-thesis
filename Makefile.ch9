@@ -1,0 +1,55 @@
+# Chapter 9 targets.
+#
+# Add this to the existing Makefile by putting the following line at its top:
+#
+#     -include Makefile.ch9
+#
+# The leading dash means a missing file is not an error, so the Chapter 8
+# targets keep working unchanged.
+
+PY ?= python
+SYNTH_DIR ?= data/processed_synth
+
+# ---------------------------------------------------------------- fast loop
+
+ch9-synth:
+	$(PY) -m scripts.make_synthetic_features --out $(SYNTH_DIR)
+
+ch9-test: ch9-synth
+	CH9_MLFLOW=0 CH9_PROFILE=smoke $(PY) -m pytest tests/ch9 -q
+
+# End-to-end rehearsal on the synthetic fixture: proves the plumbing without
+# touching the real data, PostgreSQL or the tracking server.
+ch9-smoke: ch9-synth
+	CH9_MLFLOW=0 CH9_PROFILE=smoke CH9_DATA_DIR=$(PWD)/$(SYNTH_DIR) $(PY) -m src.models.grid --force
+	CH9_MLFLOW=0 CH9_PROFILE=smoke CH9_DATA_DIR=$(PWD)/$(SYNTH_DIR) $(PY) -m src.models.select
+	CH9_MLFLOW=0 CH9_PROFILE=smoke CH9_DATA_DIR=$(PWD)/$(SYNTH_DIR) $(PY) -m src.models.guards
+	CH9_MLFLOW=0 CH9_PROFILE=smoke CH9_DATA_DIR=$(PWD)/$(SYNTH_DIR) $(PY) -m src.models.figures
+
+# ---------------------------------------------------------------- tracking
+
+ch9-mlflow-up:
+	docker compose -f docker/docker-compose.yml up -d --build mlflow
+	@echo "MLflow UI: http://localhost:5000"
+
+ch9-mlflow-down:
+	docker compose -f docker/docker-compose.yml stop mlflow
+
+# ---------------------------------------------------------------- real run
+
+ch9-search:
+	$(PY) -m src.models.grid
+
+ch9-select:
+	$(PY) -m src.models.select --sweep
+
+ch9-validate:
+	$(PY) -m src.models.guards
+
+ch9-figures:
+	$(PY) -m src.models.figures
+
+ch9: ch9-search ch9-select ch9-validate ch9-figures
+
+.PHONY: ch9-synth ch9-test ch9-smoke ch9-mlflow-up ch9-mlflow-down \
+        ch9-search ch9-select ch9-validate ch9-figures ch9

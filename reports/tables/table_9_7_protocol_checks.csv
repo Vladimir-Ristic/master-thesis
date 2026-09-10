@@ -1,0 +1,13 @@
+check,result,detail
+Test partition sealed against Chapter 9,Pass,read refused by data.load_partition
+Feature contract identical across partitions,Pass,"290 features, order preserved"
+"Target, key and absolute day index absent from features",Pass,"target, key and absolute day index excluded"
+Outer partitions chronological with embargo intact,Pass,train d1-119 -> 7-day embargo -> valid d127-154
+Inner folds purged by at least the widest feature window,Pass,"3 expanding folds, 7-day purge each"
+Every fold's training block precedes its validation block,Pass,every fold's training block strictly precedes its validation block
+Resampling confined to the fit path,Pass,"resampler present in fit path, bypassed in predict path"
+Validation class prevalence unmodified,Pass,"3.3885% positive, unchanged from Table 8.1"
+Prior correction monotone and prior-consistent,Pass,"monotone and prior-consistent; odds factors natural=1.00, weighted=27.48, smote=2.75, smote_weighted=27.48"
+All arms searched under the same protocol,Pass,12 arms searched
+Decision threshold selected on validation,Pass,thresholds derived from validation scores only
+Calibrators fitted on out-of-fold training rows,Pass,"12 calibrators, 12 fitted on 279,633-279,633 out-of-fold training rows"

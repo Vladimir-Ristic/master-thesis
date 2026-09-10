@@ -95,3 +95,15 @@ id_23    96.416215
 id_27    96.416215
 id_22    96.416215
 id_18    68.722137
+
+### Fraud rate by identity linkage
+              transaction_count  fraud_rate
+has_identity                               
+False                    446307    0.020939
+True                     144233    0.078470
+
+### Fraud rate by DeviceType (identity-linked transactions only)
+            transaction_count  fraud_rate
+devicetype                               
+mobile                  55645    0.101662
+desktop                 85165    0.065215

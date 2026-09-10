@@ -15,8 +15,8 @@ from pathlib import Path
 # Paths
 # --------------------------------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_INTERIM = PROJECT_ROOT / "data" / "interim"
-DATA_PROCESSED = PROJECT_ROOT / "data" / "processed"
+DATA_INTERIM = Path(os.environ.get("CH8_INTERIM_DIR", PROJECT_ROOT / "data" / "interim"))
+DATA_PROCESSED = Path(os.environ.get("CH8_PROCESSED_DIR", PROJECT_ROOT / "data" / "processed"))
 ARTIFACT_DIR = PROJECT_ROOT / "artifacts" / "features_v1"
 REPORT_TABLES = PROJECT_ROOT / "reports" / "tables"
 REPORT_FIGURES = PROJECT_ROOT / "reports" / "figures" / "ch8"

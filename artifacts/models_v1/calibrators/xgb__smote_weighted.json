@@ -1,0 +1,33 @@
+{
+  "kind": "identity",
+  "a": 1.0,
+  "b": 0.0,
+  "fitted_on": "oof",
+  "n_fit": 279633,
+  "prevalence_fit": 0.03996667060039409,
+  "implied_odds_factor": 1.0,
+  "diagnostics": {
+    "assumed_odds_factor": 27.47638532491851,
+    "fitted_shift_odds_factor": 0.7237421296870775,
+    "ranked_on": "held-out fold 3",
+    "n_rank": 104274,
+    "candidates": {
+      "identity": {
+        "log_loss": 0.09858124809698189,
+        "brier": 0.02384653427770496
+      },
+      "shift": {
+        "log_loss": 0.10688423615995257,
+        "brier": 0.02627794424310619
+      },
+      "platt": {
+        "log_loss": 0.10313854879448825,
+        "brier": 0.024335806594860974
+      },
+      "analytic": {
+        "log_loss": 0.1576524235763816,
+        "brier": 0.02888088360770531
+      }
+    }
+  }
+}

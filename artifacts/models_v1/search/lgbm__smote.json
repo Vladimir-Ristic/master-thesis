@@ -1,0 +1,36 @@
+{
+  "arm_id": "lgbm__smote",
+  "model": "lgbm",
+  "imbalance_arm": "smote",
+  "description": "lgbm; SMOTE r=0.1; median-imputed, standardised",
+  "best_params": {
+    "n_estimators": 800,
+    "learning_rate": 0.04463863998559551,
+    "num_leaves": 204,
+    "min_child_samples": 65,
+    "feature_fraction": 0.7886777968529155,
+    "bagging_fraction": 0.8276343672652672,
+    "reg_alpha": 0.4269885758866873,
+    "reg_lambda": 4.056220413531399
+  },
+  "n_trials_run": 20,
+  "n_pruned": 6,
+  "search_seconds": 3236.4,
+  "pr_auc_mean": 0.5935179599540368,
+  "pr_auc_std": 0.013155573427612323,
+  "pr_auc_folds": [
+    0.5848686484842481,
+    0.6121078085245673,
+    0.5835774228532948
+  ],
+  "fit_seconds": 210.3,
+  "fingerprint": {
+    "profile": "search",
+    "n_rows": 410601,
+    "n_features": 290,
+    "day_min": 1,
+    "day_max": 119,
+    "n_folds": 3,
+    "purge_days": 7
+  }
+}

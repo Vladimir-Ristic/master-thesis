@@ -17,5 +17,37 @@ services:
       timeout: 5s
       retries: 5
 
+  # Experiment tracking (RQ3). The backend store is a separate database inside
+  # the existing Postgres instance, so run history is queryable in SQL for
+  # Chapter 12; artifacts are served through the tracking server rather than
+  # written to a client-side path, so the client never needs a filesystem the
+  # server owns.
+  mlflow:
+    build:
+      context: ./mlflow
+    image: thesis-mlflow:1
+    container_name: thesis_mlflow
+    env_file: ../.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: >
+      mlflow server
+        --host 0.0.0.0
+        --port 5000
+        --backend-store-uri postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/mlflow
+        --serve-artifacts
+        --artifacts-destination /mlflow/artifacts
+    ports:
+      - "5000:5000"
+    volumes:
+      - mlflow_artifacts:/mlflow/artifacts
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:5000/health')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
 volumes:
   pgdata:
+  mlflow_artifacts:

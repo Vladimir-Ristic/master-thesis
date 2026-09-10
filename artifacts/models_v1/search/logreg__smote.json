@@ -1,0 +1,29 @@
+{
+  "arm_id": "logreg__smote",
+  "model": "logreg",
+  "imbalance_arm": "smote",
+  "description": "logreg; SMOTE r=0.1; median-imputed, standardised",
+  "best_params": {
+    "C": 0.001
+  },
+  "n_trials_run": 4,
+  "n_pruned": 1,
+  "search_seconds": 231.1,
+  "pr_auc_mean": 0.4078768829340316,
+  "pr_auc_std": 0.022764442145120627,
+  "pr_auc_folds": [
+    0.41910931922682404,
+    0.4283892701936667,
+    0.37613205938160416
+  ],
+  "fit_seconds": 41.4,
+  "fingerprint": {
+    "profile": "search",
+    "n_rows": 410601,
+    "n_features": 290,
+    "day_min": 1,
+    "day_max": 119,
+    "n_folds": 3,
+    "purge_days": 7
+  }
+}

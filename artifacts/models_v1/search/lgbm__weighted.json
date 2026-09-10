@@ -1,0 +1,36 @@
+{
+  "arm_id": "lgbm__weighted",
+  "model": "lgbm",
+  "imbalance_arm": "weighted",
+  "description": "lgbm; class weighting; native missing handling",
+  "best_params": {
+    "n_estimators": 650,
+    "learning_rate": 0.042481986415491044,
+    "num_leaves": 239,
+    "min_child_samples": 264,
+    "feature_fraction": 0.7377365908349768,
+    "bagging_fraction": 0.9042340364991984,
+    "reg_alpha": 0.219079126369819,
+    "reg_lambda": 9.808414998438181
+  },
+  "n_trials_run": 20,
+  "n_pruned": 7,
+  "search_seconds": 3210.8,
+  "pr_auc_mean": 0.6051710223052774,
+  "pr_auc_std": 0.01928130293711836,
+  "pr_auc_folds": [
+    0.593243638237151,
+    0.632370441225839,
+    0.5898989874528424
+  ],
+  "fit_seconds": 190.2,
+  "fingerprint": {
+    "profile": "search",
+    "n_rows": 410601,
+    "n_features": 290,
+    "day_min": 1,
+    "day_max": 119,
+    "n_folds": 3,
+    "purge_days": 7
+  }
+}

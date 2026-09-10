@@ -1,6 +1,24 @@
+
 """Shared fixtures: build the pipeline once against the synthetic clone."""
 
 from __future__ import annotations
+
+# >>> ch8 test sandbox (managed by fix_ch8_test_sandbox.py)
+# Chapter 8's tests run the real feature pipeline. Without this, they overwrite
+# data/interim/ and data/processed/ with a synthetic fixture. The environment
+# variables are read by src/features/config.py at import time, which is why they
+# are set here, before every src.features import, rather than in a fixture.
+import os as _sandbox_os
+import pathlib as _sandbox_pathlib
+import tempfile as _sandbox_tempfile
+
+CH8_TEST_SANDBOX = _sandbox_pathlib.Path(_sandbox_tempfile.mkdtemp(prefix="ch8_test_"))
+(CH8_TEST_SANDBOX / "interim").mkdir(parents=True, exist_ok=True)
+(CH8_TEST_SANDBOX / "processed").mkdir(parents=True, exist_ok=True)
+_sandbox_os.environ["CH8_INTERIM_DIR"] = str(CH8_TEST_SANDBOX / "interim")
+_sandbox_os.environ["CH8_PROCESSED_DIR"] = str(CH8_TEST_SANDBOX / "processed")
+# <<< ch8 test sandbox
+
 
 import subprocess
 import sys
@@ -8,6 +26,9 @@ from pathlib import Path
 
 import pandas as pd
 import pytest
+
+import os, pathlib, tempfile
+
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))

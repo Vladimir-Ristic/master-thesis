@@ -12,3 +12,24 @@ __pycache__/
 # secrets
 .env
 *.pem
+
+
+data/processed_synth/
+artifacts/models_v1/scores/
+artifacts/models_v1/scores_raw/
+mlruns/
+# >>> chapter 9
+artifacts/models_v1/scores/
+artifacts/models_v1/scores_raw/
+artifacts/models_v1/oof/
+artifacts/models_v1_smoke/
+reports/tables/ch9_smoke/
+reports/figures/ch9_smoke/
+data/processed_synth/
+data/processed_ch8_real/
+mlruns/
+mlflow.db
+src/models.bak-*
+# <<< chapter 9
+*.bak
+*.bak[0-9]

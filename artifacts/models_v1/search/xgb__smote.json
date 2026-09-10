@@ -1,0 +1,37 @@
+{
+  "arm_id": "xgb__smote",
+  "model": "xgb",
+  "imbalance_arm": "smote",
+  "description": "xgb; SMOTE r=0.1; median-imputed, standardised",
+  "best_params": {
+    "n_estimators": 800,
+    "learning_rate": 0.022168245261392883,
+    "max_depth": 8,
+    "min_child_weight": 2.503767419013094,
+    "subsample": 0.719666392072172,
+    "colsample_bytree": 0.5346502977434504,
+    "reg_alpha": 0.14047541239450215,
+    "reg_lambda": 0.5390622982099245,
+    "gamma": 0.003036882905532927
+  },
+  "n_trials_run": 20,
+  "n_pruned": 7,
+  "search_seconds": 2346.8,
+  "pr_auc_mean": 0.5855212288866786,
+  "pr_auc_std": 0.014085458407121854,
+  "pr_auc_folds": [
+    0.576471559316217,
+    0.6054141415708282,
+    0.5746779857729907
+  ],
+  "fit_seconds": 204.2,
+  "fingerprint": {
+    "profile": "search",
+    "n_rows": 410601,
+    "n_features": 290,
+    "day_min": 1,
+    "day_max": 119,
+    "n_folds": 3,
+    "purge_days": 7
+  }
+}

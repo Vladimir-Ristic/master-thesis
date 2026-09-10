@@ -1,0 +1,36 @@
+{
+  "arm_id": "lgbm__natural",
+  "model": "lgbm",
+  "imbalance_arm": "natural",
+  "description": "lgbm; natural distribution; native missing handling",
+  "best_params": {
+    "n_estimators": 750,
+    "learning_rate": 0.0330150472622879,
+    "num_leaves": 250,
+    "min_child_samples": 186,
+    "feature_fraction": 0.7004962842974287,
+    "bagging_fraction": 0.9252726828767402,
+    "reg_alpha": 0.01032513705122379,
+    "reg_lambda": 0.007364335582356858
+  },
+  "n_trials_run": 20,
+  "n_pruned": 4,
+  "search_seconds": 2273.3,
+  "pr_auc_mean": 0.6103226465330535,
+  "pr_auc_std": 0.018367449598901357,
+  "pr_auc_folds": [
+    0.6031705609730559,
+    0.635524612675053,
+    0.5922727659510516
+  ],
+  "fit_seconds": 210.2,
+  "fingerprint": {
+    "profile": "search",
+    "n_rows": 410601,
+    "n_features": 290,
+    "day_min": 1,
+    "day_max": 119,
+    "n_folds": 3,
+    "purge_days": 7
+  }
+}
