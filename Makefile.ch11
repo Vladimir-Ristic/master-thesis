@@ -1,0 +1,44 @@
+PY ?= python3
+
+.PHONY: ch11-test ch11-tables ch11-history ch11-parity ch11-up ch11-down \
+		ch11-bench ch11-flow ch11-validate ch11-figures ch11
+
+## Fast loop: the Chapter 11 suite only.
+ch11-test:
+	$(PY) -m pytest tests/ch11 -q
+
+## Create the serving tables (predictions, tx_history).
+ch11-tables:
+	$(PY) -m src.serving.persist --create-tables
+
+## Backfill the entity history store from the interim layer.
+ch11-history:
+	$(PY) -m src.serving.history --backfill
+
+## The training-serving parity harness - the chapter's headline result.
+ch11-parity:
+	$(PY) -m src.serving.parity --n 5000
+
+## Container stack.
+ch11-up:
+	docker compose -f docker/docker-compose.yml up -d --build api
+
+ch11-down:
+	docker compose -f docker/docker-compose.yml down
+
+## Latency and throughput benchmark.
+ch11-bench:
+	$(PY) -m src.serving.bench
+
+## Prefect batch scoring flow over one validation day.
+ch11-flow:
+	$(PY) -m src.flows.score_batch --day 127
+
+## Protocol checks.
+ch11-validate:
+	$(PY) -m src.serving.validate
+
+ch11-figures:
+	$(PY) -m src.serving.figures
+
+ch11: ch11-test ch11-tables ch11-history ch11-parity ch11-validate ch11-figures
