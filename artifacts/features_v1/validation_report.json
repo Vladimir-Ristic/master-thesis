@@ -1,0 +1,230 @@
+{
+  "structure": [
+    {
+      "Check": "Identical feature contract across partitions",
+      "Result": "PASS",
+      "Detail": "290 features, order preserved"
+    },
+    {
+      "Check": "Target and key absent from feature matrix",
+      "Result": "PASS",
+      "Detail": "clean"
+    },
+    {
+      "Check": "No transaction appears in two partitions",
+      "Result": "PASS",
+      "Detail": "disjoint"
+    },
+    {
+      "Check": "Partitions are strictly chronological",
+      "Result": "PASS",
+      "Detail": "train 1-119 -> valid 127-154 -> test 155-182"
+    },
+    {
+      "Check": "Embargo interval is empty and wide enough",
+      "Result": "PASS",
+      "Detail": "7 day gap, widest feature window is 7 days"
+    },
+    {
+      "Check": "No constant features in the training partition",
+      "Result": "PASS",
+      "Detail": "none"
+    },
+    {
+      "Check": "No single feature separates the classes",
+      "Result": "PASS",
+      "Detail": "highest single-feature ROC-AUC 0.744 (d5)"
+    },
+    {
+      "Check": "End-to-end probe score is plausible",
+      "Result": "PASS",
+      "Detail": "validation PR-AUC 0.5268"
+    }
+  ],
+  "max_single_feature_auc": 0.7440095783902543,
+  "probe_scores": {
+    "train": {
+      "pr_auc": 0.7658461939251783,
+      "roc_auc": 0.9546370854483204,
+      "positive_rate": 0.03511681656888317
+    },
+    "valid": {
+      "pr_auc": 0.5268269079565392,
+      "roc_auc": 0.9057962776636237,
+      "positive_rate": 0.033885019660250315
+    },
+    "test": {
+      "pr_auc": 0.5183559958806992,
+      "roc_auc": 0.8984241287504823,
+      "positive_rate": 0.03531868299763184
+    }
+  },
+  "unseen_category_rows": [
+    {
+      "partition": "test",
+      "feature": "id_31",
+      "unseen_share": 0.10270937842173614
+    },
+    {
+      "partition": "test",
+      "feature": "id_13",
+      "unseen_share": 0.046688396017417436
+    },
+    {
+      "partition": "test",
+      "feature": "deviceinfo",
+      "unseen_share": 0.006060451732830842
+    },
+    {
+      "partition": "valid",
+      "feature": "deviceinfo",
+      "unseen_share": 0.004137647451877361
+    },
+    {
+      "partition": "test",
+      "feature": "id_30",
+      "unseen_share": 0.001782485803773777
+    },
+    {
+      "partition": "test",
+      "feature": "id_33",
+      "unseen_share": 0.0014896488502966565
+    },
+    {
+      "partition": "valid",
+      "feature": "id_33",
+      "unseen_share": 0.0010536866181799491
+    },
+    {
+      "partition": "valid",
+      "feature": "id_20",
+      "unseen_share": 0.0006167921667394824
+    },
+    {
+      "partition": "test",
+      "feature": "id_19",
+      "unseen_share": 0.0003310330778437015
+    },
+    {
+      "partition": "test",
+      "feature": "id_20",
+      "unseen_share": 0.0003183010363881745
+    },
+    {
+      "partition": "valid",
+      "feature": "id_19",
+      "unseen_share": 0.00024414689933437844
+    },
+    {
+      "partition": "test",
+      "feature": "id_17",
+      "unseen_share": 0.00010185633164421583
+    },
+    {
+      "partition": "valid",
+      "feature": "id_30",
+      "unseen_share": 7.70990208424353e-05
+    },
+    {
+      "partition": "valid",
+      "feature": "id_17",
+      "unseen_share": 3.854951042121765e-05
+    },
+    {
+      "partition": "valid",
+      "feature": "id_31",
+      "unseen_share": 2.56996736141451e-05
+    },
+    {
+      "partition": "valid",
+      "feature": "id_13",
+      "unseen_share": 2.56996736141451e-05
+    }
+  ],
+  "missingness_drift": [
+    {
+      "feature": "m7",
+      "train_missing": 0.671184434524027,
+      "test_missing": 0.39218507295459754,
+      "abs_delta": 0.27899936156942945
+    },
+    {
+      "feature": "m8",
+      "train_missing": 0.6711746927065448,
+      "test_missing": 0.39218507295459754,
+      "abs_delta": 0.2789896197519473
+    },
+    {
+      "feature": "m9",
+      "train_missing": 0.6711746927065448,
+      "test_missing": 0.39218507295459754,
+      "abs_delta": 0.2789896197519473
+    },
+    {
+      "feature": "d11",
+      "train_missing": 0.5479699270094325,
+      "test_missing": 0.28978126352779404,
+      "abs_delta": 0.25818866348163844
+    },
+    {
+      "feature": "v1",
+      "train_missing": 0.5479699270094325,
+      "test_missing": 0.28978126352779404,
+      "abs_delta": 0.25818866348163844
+    },
+    {
+      "feature": "v10",
+      "train_missing": 0.5479699270094325,
+      "test_missing": 0.28978126352779404,
+      "abs_delta": 0.25818866348163844
+    },
+    {
+      "feature": "v3",
+      "train_missing": 0.5479699270094325,
+      "test_missing": 0.28978126352779404,
+      "abs_delta": 0.25818866348163844
+    },
+    {
+      "feature": "v5",
+      "train_missing": 0.5479699270094325,
+      "test_missing": 0.28978126352779404,
+      "abs_delta": 0.25818866348163844
+    },
+    {
+      "feature": "v7",
+      "train_missing": 0.5479699270094325,
+      "test_missing": 0.28978126352779404,
+      "abs_delta": 0.25818866348163844
+    },
+    {
+      "feature": "v2",
+      "train_missing": 0.5479699270094325,
+      "test_missing": 0.28978126352779404,
+      "abs_delta": 0.25818866348163844
+    },
+    {
+      "feature": "v8",
+      "train_missing": 0.5479699270094325,
+      "test_missing": 0.28978126352779404,
+      "abs_delta": 0.25818866348163844
+    },
+    {
+      "feature": "m2",
+      "train_missing": 0.5397916712331436,
+      "test_missing": 0.2879223854752871,
+      "abs_delta": 0.25186928575785655
+    },
+    {
+      "feature": "m1",
+      "train_missing": 0.5397916712331436,
+      "test_missing": 0.2879223854752871,
+      "abs_delta": 0.25186928575785655
+    },
+    {
+      "feature": "m3",
+      "train_missing": 0.5397916712331436,
+      "test_missing": 0.2879223854752871,
+      "abs_delta": 0.25186928575785655
+    }
+  ]
+}

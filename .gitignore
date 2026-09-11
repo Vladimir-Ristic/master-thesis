@@ -40,3 +40,5 @@ data/
 *:Zone.Identifier
 reports/*.log
 data/
+artifacts/_quarantine/
+artifacts/features_v1/*.joblib

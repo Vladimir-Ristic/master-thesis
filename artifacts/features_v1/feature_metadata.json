@@ -1,0 +1,1208 @@
+{
+  "feature_version": "v1",
+  "built_at_utc": "2026-09-11T18:35:11.625839+00:00",
+  "n_features": 290,
+  "split_days": {
+    "train": [
+      0,
+      120
+    ],
+    "embargo": [
+      120,
+      127
+    ],
+    "valid": [
+      127,
+      155
+    ],
+    "test": [
+      155,
+      183
+    ]
+  },
+  "embargo_rationale": "The embargo width equals the longest lookback window used by any engineered feature (7 days). A validation row inside the embargo would carry aggregates computed over training-period transactions, so its features and the training rows would share information; removing the interval makes the evaluation boundary clean by construction rather than by assumption.",
+  "windows_seconds": {
+    "1h": 3600,
+    "24h": 86400,
+    "7d": 604800
+  },
+  "partitions": {
+    "train": {
+      "path": "/home/vladimir/projects/master-thesis/data/processed_rebuild/train_v1.parquet",
+      "rows": 410601,
+      "cols": 293
+    },
+    "valid": {
+      "path": "/home/vladimir/projects/master-thesis/data/processed_rebuild/valid_v1.parquet",
+      "rows": 77822,
+      "cols": 293
+    },
+    "test": {
+      "path": "/home/vladimir/projects/master-thesis/data/processed_rebuild/test_v1.parquet",
+      "rows": 78542,
+      "cols": 293
+    }
+  },
+  "features": [
+    {
+      "name": "transactionamt",
+      "family": "Named / business"
+    },
+    {
+      "name": "productcd",
+      "family": "Named / business"
+    },
+    {
+      "name": "card1",
+      "family": "Named / business"
+    },
+    {
+      "name": "card2",
+      "family": "Named / business"
+    },
+    {
+      "name": "card3",
+      "family": "Named / business"
+    },
+    {
+      "name": "card4",
+      "family": "Named / business"
+    },
+    {
+      "name": "card5",
+      "family": "Named / business"
+    },
+    {
+      "name": "card6",
+      "family": "Named / business"
+    },
+    {
+      "name": "addr1",
+      "family": "Named / business"
+    },
+    {
+      "name": "addr2",
+      "family": "Named / business"
+    },
+    {
+      "name": "dist1",
+      "family": "Named / business"
+    },
+    {
+      "name": "dist2",
+      "family": "Named / business"
+    },
+    {
+      "name": "p_emaildomain",
+      "family": "Named / business"
+    },
+    {
+      "name": "r_emaildomain",
+      "family": "Named / business"
+    },
+    {
+      "name": "c1",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c2",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c3",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c4",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c5",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c6",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c7",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c8",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c9",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c10",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c11",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c12",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c13",
+      "family": "C (counting)"
+    },
+    {
+      "name": "c14",
+      "family": "C (counting)"
+    },
+    {
+      "name": "d1",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d2",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d3",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d4",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d5",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d6",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d7",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d8",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d9",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d10",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d11",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d12",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d13",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d14",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "d15",
+      "family": "D (timedelta)"
+    },
+    {
+      "name": "m1",
+      "family": "M (match flag)"
+    },
+    {
+      "name": "m2",
+      "family": "M (match flag)"
+    },
+    {
+      "name": "m3",
+      "family": "M (match flag)"
+    },
+    {
+      "name": "m4",
+      "family": "M (match flag)"
+    },
+    {
+      "name": "m5",
+      "family": "M (match flag)"
+    },
+    {
+      "name": "m6",
+      "family": "M (match flag)"
+    },
+    {
+      "name": "m7",
+      "family": "M (match flag)"
+    },
+    {
+      "name": "m8",
+      "family": "M (match flag)"
+    },
+    {
+      "name": "m9",
+      "family": "M (match flag)"
+    },
+    {
+      "name": "id_01",
+      "family": "Identity"
+    },
+    {
+      "name": "id_02",
+      "family": "Identity"
+    },
+    {
+      "name": "id_03",
+      "family": "Identity"
+    },
+    {
+      "name": "id_04",
+      "family": "Identity"
+    },
+    {
+      "name": "id_05",
+      "family": "Identity"
+    },
+    {
+      "name": "id_06",
+      "family": "Identity"
+    },
+    {
+      "name": "id_09",
+      "family": "Identity"
+    },
+    {
+      "name": "id_10",
+      "family": "Identity"
+    },
+    {
+      "name": "id_11",
+      "family": "Identity"
+    },
+    {
+      "name": "id_12",
+      "family": "Identity"
+    },
+    {
+      "name": "id_13",
+      "family": "Identity"
+    },
+    {
+      "name": "id_14",
+      "family": "Identity"
+    },
+    {
+      "name": "id_15",
+      "family": "Identity"
+    },
+    {
+      "name": "id_16",
+      "family": "Identity"
+    },
+    {
+      "name": "id_17",
+      "family": "Identity"
+    },
+    {
+      "name": "id_18",
+      "family": "Identity"
+    },
+    {
+      "name": "id_19",
+      "family": "Identity"
+    },
+    {
+      "name": "id_20",
+      "family": "Identity"
+    },
+    {
+      "name": "id_28",
+      "family": "Identity"
+    },
+    {
+      "name": "id_29",
+      "family": "Identity"
+    },
+    {
+      "name": "id_30",
+      "family": "Identity"
+    },
+    {
+      "name": "id_31",
+      "family": "Identity"
+    },
+    {
+      "name": "id_32",
+      "family": "Identity"
+    },
+    {
+      "name": "id_33",
+      "family": "Identity"
+    },
+    {
+      "name": "id_34",
+      "family": "Identity"
+    },
+    {
+      "name": "id_35",
+      "family": "Identity"
+    },
+    {
+      "name": "id_36",
+      "family": "Identity"
+    },
+    {
+      "name": "id_37",
+      "family": "Identity"
+    },
+    {
+      "name": "id_38",
+      "family": "Identity"
+    },
+    {
+      "name": "devicetype",
+      "family": "Identity"
+    },
+    {
+      "name": "deviceinfo",
+      "family": "Identity"
+    },
+    {
+      "name": "tx_hour",
+      "family": "Temporal"
+    },
+    {
+      "name": "tx_weekday",
+      "family": "Temporal"
+    },
+    {
+      "name": "tx_hour_sin",
+      "family": "Temporal"
+    },
+    {
+      "name": "tx_hour_cos",
+      "family": "Temporal"
+    },
+    {
+      "name": "tx_weekday_sin",
+      "family": "Temporal"
+    },
+    {
+      "name": "tx_weekday_cos",
+      "family": "Temporal"
+    },
+    {
+      "name": "tx_is_night",
+      "family": "Temporal"
+    },
+    {
+      "name": "amt_log",
+      "family": "Amount"
+    },
+    {
+      "name": "amt_cents",
+      "family": "Amount"
+    },
+    {
+      "name": "amt_is_round",
+      "family": "Amount"
+    },
+    {
+      "name": "amt_decimal_digits",
+      "family": "Amount"
+    },
+    {
+      "name": "p_email_provider",
+      "family": "Email"
+    },
+    {
+      "name": "p_email_suffix",
+      "family": "Email"
+    },
+    {
+      "name": "r_email_provider",
+      "family": "Email"
+    },
+    {
+      "name": "r_email_suffix",
+      "family": "Email"
+    },
+    {
+      "name": "email_domains_match",
+      "family": "Email"
+    },
+    {
+      "name": "acct_cnt_1h",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_cnt_24h",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_amt_sum_24h",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_amt_mean_24h",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_cnt_7d",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_amt_mean_7d",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_amt_std_7d",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "cardaddr_cnt_24h",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "cardaddr_cnt_7d",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "cardaddr_amt_mean_7d",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "card_cnt_24h",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "card_cnt_7d",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "card_amt_mean_7d",
+      "family": "Named / business"
+    },
+    {
+      "name": "acct_cnt_hist",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_amt_mean_hist",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_amt_std_hist",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "amt_to_acct_mean_ratio",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "amt_acct_zscore",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "card_cnt_hist",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "amt_to_card_mean_ratio",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_secs_since_prev",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "cardaddr_secs_since_prev",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "card_secs_since_prev",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_distinct_productcd_hist",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "acct_distinct_devicetype_hist",
+      "family": "Entity aggregation"
+    },
+    {
+      "name": "n_missing_v",
+      "family": "Missingness"
+    },
+    {
+      "name": "v_missing_share",
+      "family": "Missingness"
+    },
+    {
+      "name": "v1",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v2",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v3",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v5",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v7",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v8",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v10",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v13",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v14",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v18",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v20",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v24",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v26",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v27",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v30",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v36",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v38",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v40",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v41",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v45",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v46",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v47",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v48",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v52",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v54",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v56",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v60",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v62",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v65",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v67",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v68",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v70",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v76",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v78",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v81",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v82",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v87",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v88",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v89",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v91",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v94",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v95",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v96",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v98",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v100",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v103",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v104",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v105",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v108",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v109",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v111",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v115",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v116",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v117",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v118",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v120",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v121",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v123",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v124",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v126",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v127",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v129",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v130",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v134",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v136",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v138",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v140",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v142",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v147",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v156",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v160",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v162",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v167",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v169",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v173",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v175",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v180",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v181",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v185",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v188",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v194",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v198",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v201",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v202",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v203",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v206",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v209",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v210",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v211",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v216",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v219",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v220",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v222",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v223",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v226",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v231",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v234",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v237",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v239",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v240",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v245",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v246",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v251",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v252",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v260",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v262",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v263",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v264",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v266",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v271",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v273",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v275",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v278",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v281",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v282",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v283",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v284",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v285",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v286",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v288",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v293",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v296",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v298",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v299",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v301",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v303",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v305",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v306",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v307",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v309",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v310",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v313",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v314",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v316",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v320",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v322",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v323",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v325",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v328",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v329",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v332",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v335",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "v339",
+      "family": "Anonymised V (retained)"
+    },
+    {
+      "name": "has_identity",
+      "family": "Missingness"
+    },
+    {
+      "name": "n_missing_identity",
+      "family": "Missingness"
+    },
+    {
+      "name": "n_missing_named",
+      "family": "Missingness"
+    },
+    {
+      "name": "n_missing_d",
+      "family": "Missingness"
+    },
+    {
+      "name": "n_missing_m",
+      "family": "Missingness"
+    },
+    {
+      "name": "r_emaildomain_is_missing",
+      "family": "Missingness"
+    },
+    {
+      "name": "dist1_is_missing",
+      "family": "Missingness"
+    },
+    {
+      "name": "dist2_is_missing",
+      "family": "Missingness"
+    },
+    {
+      "name": "addr1_is_missing",
+      "family": "Missingness"
+    },
+    {
+      "name": "p_emaildomain_is_missing",
+      "family": "Missingness"
+    },
+    {
+      "name": "card1_freq",
+      "family": "Frequency encoding"
+    },
+    {
+      "name": "card2_freq",
+      "family": "Frequency encoding"
+    },
+    {
+      "name": "card3_freq",
+      "family": "Frequency encoding"
+    },
+    {
+      "name": "card5_freq",
+      "family": "Frequency encoding"
+    },
+    {
+      "name": "addr1_freq",
+      "family": "Frequency encoding"
+    },
+    {
+      "name": "p_emaildomain_freq",
+      "family": "Frequency encoding"
+    },
+    {
+      "name": "r_emaildomain_freq",
+      "family": "Frequency encoding"
+    },
+    {
+      "name": "deviceinfo_freq",
+      "family": "Frequency encoding"
+    },
+    {
+      "name": "uid_card_freq",
+      "family": "Frequency encoding"
+    },
+    {
+      "name": "uid_card_addr_freq",
+      "family": "Frequency encoding"
+    },
+    {
+      "name": "uid_account_freq",
+      "family": "Frequency encoding"
+    }
+  ]
+}
