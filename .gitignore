@@ -33,3 +33,10 @@ src/models.bak-*
 # <<< chapter 9
 *.bak
 *.bak[0-9]
+artifacts/explain_v1/shap/
+:Zone.Identifier
+reports/.log
+data/
+*:Zone.Identifier
+reports/*.log
+data/

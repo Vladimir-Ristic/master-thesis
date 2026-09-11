@@ -1,0 +1,5 @@
+comparison,n,spearman
+mean|SHAP| vs split gain (all features),290,0.9245327302262956
+mean|SHAP| vs split gain (top 50 by SHAP),50,0.6160384153661465
+mean|SHAP| vs single-feature AUC (Ch.8 top-30 only),30,0.10834260289210233
+"top-10 overlap, SHAP vs gain",10,0.5

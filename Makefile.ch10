@@ -1,0 +1,30 @@
+# Makefile.ch10
+.PHONY: ch10 ch10-test ch10-groups ch10-shap ch10-global ch10-local ch10-compact ch10-validate ch10-figures
+
+PY := python3
+
+ch10: ch10-groups ch10-shap ch10-global ch10-local ch10-compact ch10-validate ch10-figures
+
+ch10-test:
+	$(PY) -m pytest tests/ch10 -q
+
+ch10-groups:
+	$(PY) -m src.explain.groups
+
+ch10-shap:
+	$(PY) -m src.explain.shap_values
+
+ch10-global:
+	$(PY) -m src.explain.aggregate
+
+ch10-local:
+	$(PY) -m src.explain.local
+
+ch10-compact:
+	$(PY) -m src.explain.compact
+
+ch10-validate:
+	$(PY) -m src.explain.validate
+
+ch10-figures:
+	$(PY) -m src.explain.figures

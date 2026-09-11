@@ -1,0 +1,12 @@
+{
+  "headline_basis": "two-block sum-then-absolute",
+  "n_named": 147,
+  "n_anonymised": 143,
+  "named_share_two_block": 0.7763829992398446,
+  "anon_share_two_block": 0.2236170007601554,
+  "named_share_abs_then_sum": 0.8301545498822079,
+  "anon_share_abs_then_sum": 0.16984545011779204,
+  "named_share_family_normalised": 0.8687477829730277,
+  "cancellation_named": 0.24242921733932102,
+  "cancellation_anon": 0.3412862535316507
+}

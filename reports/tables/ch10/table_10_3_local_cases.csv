@@ -1,0 +1,10 @@
+case,rank,p_calibrated,amount,is_fraud,reason,value,contribution_logodds
+highest-p true positive (flagged),1,0.997367,150.0,1,V13 (anonymised group),4.0,2.6481
+highest-p true positive (flagged),2,0.997367,150.0,1,c14,0.0,1.1042
+highest-p true positive (flagged),3,0.997367,150.0,1,V09 (anonymised group),4.0,1.0638
+highest-amount false positive (flagged),1,0.094372,5279.9501953125,0,c13,0.0,0.5556
+highest-amount false positive (flagged),2,0.094372,5279.9501953125,0,transactionamt,5279.9501953125,0.4851
+highest-amount false positive (flagged),3,0.094372,5279.9501953125,0,c14,0.0,0.4666
+highest-amount false negative (below threshold),1,0.071526,3822.949951171875,1,transactionamt,3822.949951171875,0.5372
+highest-amount false negative (below threshold),2,0.071526,3822.949951171875,1,c13,1.0,0.4131
+highest-amount false negative (below threshold),3,0.071526,3822.949951171875,1,card6,1.0,0.211
