@@ -129,7 +129,7 @@
     "cardaddr_amt_mean_7d": "Entity aggregation",
     "card_cnt_24h": "Entity aggregation",
     "card_cnt_7d": "Entity aggregation",
-    "card_amt_mean_7d": "Named / business",
+    "card_amt_mean_7d": "Entity aggregation",
     "acct_cnt_hist": "Entity aggregation",
     "acct_amt_mean_hist": "Entity aggregation",
     "acct_amt_std_hist": "Entity aggregation",

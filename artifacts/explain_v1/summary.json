@@ -6,7 +6,13 @@
   "anon_share_two_block": 0.2236170007601554,
   "named_share_abs_then_sum": 0.8301545498822079,
   "anon_share_abs_then_sum": 0.16984545011779204,
-  "named_share_family_normalised": 0.8687477829730277,
+  "named_share_family_normalised": 0.8686627770425281,
   "cancellation_named": 0.24242921733932102,
-  "cancellation_anon": 0.3412862535316507
+  "cancellation_anon": 0.3412862535316507,
+  "flagged": 14628,
+  "review_rate": 0.18796741281385726,
+  "precision": 0.15620727372162976,
+  "named_reason_coverage": 0.9922067268252666,
+  "latency_median_ms": 272.5841395003954,
+  "latency_p95_ms": 325.14754049043404
 }

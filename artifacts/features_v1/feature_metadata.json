@@ -1,6 +1,6 @@
 {
   "feature_version": "v1",
-  "built_at_utc": "2026-09-11T18:35:11.625839+00:00",
+  "built_at_utc": "2026-09-11T22:04:11.748289+00:00",
   "n_features": 290,
   "split_days": {
     "train": [
@@ -490,7 +490,7 @@
     },
     {
       "name": "card_amt_mean_7d",
-      "family": "Named / business"
+      "family": "Entity aggregation"
     },
     {
       "name": "acct_cnt_hist",

@@ -42,7 +42,7 @@ def _log(msg: str, t0: float) -> None:
 def _feature_family(name: str) -> str:
     if name.endswith("_freq"):
         return "Frequency encoding"
-    if name.startswith(("acct_", "cardaddr_", "card_secs", "card_cnt", "amt_to_", "amt_acct_")):
+    if name.startswith(("acct_", "cardaddr_", "card_", "amt_to_", "amt_acct_")):
         return "Entity aggregation"
     if name.startswith("tx_"):
         return "Temporal"

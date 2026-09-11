@@ -1,9 +1,9 @@
 Feature family,Count
 Anonymised V (retained),143
 Identity,31
-Entity aggregation,24
-Named / business,15
+Entity aggregation,25
 D (timedelta),15
+Named / business,14
 C (counting),14
 Missingness,12
 Frequency encoding,11
