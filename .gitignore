@@ -42,3 +42,7 @@ reports/*.log
 data/
 artifacts/_quarantine/
 artifacts/features_v1/*.joblib
+*.TMP
+.~lock.*
+*.TMP
+.~lock.*
