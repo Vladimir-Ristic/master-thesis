@@ -17,7 +17,9 @@ CH8_TEST_SANDBOX = _sandbox_pathlib.Path(_sandbox_tempfile.mkdtemp(prefix="ch8_t
 (CH8_TEST_SANDBOX / "processed").mkdir(parents=True, exist_ok=True)
 _sandbox_os.environ["CH8_INTERIM_DIR"] = str(CH8_TEST_SANDBOX / "interim")
 _sandbox_os.environ["CH8_PROCESSED_DIR"] = str(CH8_TEST_SANDBOX / "processed")
-# <<< ch8 test sandbox
+_sandbox_os.environ["CH8_ARTIFACTS_DIR"] = str(CH8_TEST_SANDBOX / "artifacts")
+_sandbox_os.environ["CH8_REPORTS_DIR"]   = str(CH8_TEST_SANDBOX / "reports")
+# < ch8 test sandbox
 
 
 import subprocess
