@@ -19,7 +19,7 @@ from src.serving import config as C
 from src.serving.artifacts import load_artifacts
 from src.serving.explain import explainer, reason_codes
 from src.serving.featurize import featurize
-from src.serving.persist import record
+from src.serving.persist import record, record_history
 from src.serving.schemas import RawTransaction, ScoreResponse
 from src.serving.score import score_frame
 
@@ -87,7 +87,7 @@ def _score_many(
     art = STATE["art"]
     t0 = time.perf_counter()
     with _cursor() as cur:
-        X = featurize(txs, art, cur)
+        X, hist = featurize(txs, art, cur)                      # <-- changed
         scored = score_frame(X, art)
         flagged = [s.transactionid for s in scored if s.flagged]
         if C.EXPLAIN_FLAGGED_ONLY:
@@ -98,7 +98,6 @@ def _score_many(
         if persist:
             feats = None
             if store_features:
-                # psycopg2's Json writes NaN as a bare literal, which jsonb rejects.
                 feats = {
                     int(tid): {
                         k: (None if pd.isna(v) else float(v))
@@ -106,10 +105,9 @@ def _score_many(
                     }
                     for tid in X.index
                 }
-            record(
-                cur, art, scored, reasons=reasons, features=feats,
-                latency_ms={s.transactionid: per_row for s in scored},
-            )
+            record(cur, art, scored, reasons=reasons, features=feats,
+                   latency_ms={s.transactionid: per_row for s in scored})
+        record_history(cur, hist)                               # <-- added
     return [
         ScoreResponse(
             transactionid=s.transactionid,

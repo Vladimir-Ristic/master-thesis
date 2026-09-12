@@ -50,7 +50,7 @@ def run(n: int = 5000, chunk: int = 500, seed: int = 42) -> pd.DataFrame:
     with connect() as conn, conn.cursor() as cur:
         for i in range(0, len(ids), chunk):
             batch = ids[i : i + chunk]
-            served.append(featurize(_payloads(batch), art, cur))
+            served.append(featurize(_payloads(batch), art, cur)[0])
             print(f"  featurized {min(i + chunk, len(ids)):>6,}/{len(ids):,}", flush=True)
     got = pd.concat(served).astype("float32")
 

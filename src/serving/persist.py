@@ -10,6 +10,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import numpy as np
+import pandas as pd
+
+from src.serving.history import STORE_COLUMNS
 
 from psycopg2.extras import Json, execute_batch
 
@@ -25,6 +29,13 @@ INSERT INTO predictions
 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 """
 
+_INSERT_HISTORY = """
+INSERT INTO tx_history
+    (transactionid, transactiondt, transactionamt, uid_card, uid_card_addr,
+     uid_account, productcd_key, devicetype_key)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+ON CONFLICT (transactionid) DO NOTHING
+"""
 
 def record(
     cur,
@@ -49,6 +60,32 @@ def record(
         for s in scored
     ]
     execute_batch(cur, _INSERT, rows, page_size=500)
+    return len(rows)
+
+
+def _py(v):
+    """psycopg2 does not adapt numpy scalars."""
+    if v is None or (not isinstance(v, str) and pd.isna(v)):
+        return None
+    if isinstance(v, np.integer):
+        return int(v)
+    if isinstance(v, np.floating):
+        return float(v)
+    return v
+
+
+def record_history(cur, hist: pd.DataFrame) -> int:
+    """A scored transaction becomes history for the next one.
+
+    Without this the store goes stale and every account eventually looks dormant.
+    ON CONFLICT DO NOTHING makes a replay idempotent, which matters because the
+    batch flow can be re-run for a day.
+    """
+    rows = [
+        tuple(_py(v) for v in rec)
+        for rec in hist[STORE_COLUMNS].itertuples(index=False, name=None)
+    ]
+    execute_batch(cur, _INSERT_HISTORY, rows, page_size=500)
     return len(rows)
 
 

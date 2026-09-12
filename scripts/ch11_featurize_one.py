@@ -23,7 +23,7 @@ tx = RawTransaction(**payload)
 
 art = load_artifacts()
 with connect() as conn, conn.cursor() as cur:
-    X = featurize([tx], art, cur)
+    X, _ = featurize([tx], art, cur)
 
 print("shape:", X.shape, "(expect (1, 290))")
 print("columns match contract:", list(X.columns) == art.feature_names)

@@ -16,7 +16,7 @@ import pandas as pd
 from src.features import config as fcfg
 from src.features import entity, missingness, transforms
 from src.serving.artifacts import Artifacts
-from src.serving.history import aggregates_for
+from src.serving.history import NULL_SENTINEL, STORE_COLUMNS, aggregates_for
 from src.serving.schemas import RawTransaction
 
 NAMED_FIELDS = [f for f in RawTransaction.model_fields if f != "v"]
@@ -47,7 +47,7 @@ def _frames(txs: list[RawTransaction]) -> tuple[pd.DataFrame, pd.DataFrame]:
     return base, vframe
 
 
-def featurize(txs: list[RawTransaction], art: Artifacts, cur) -> pd.DataFrame:
+def featurize(txs: list[RawTransaction], art: Artifacts, cur) ->  tuple[pd.DataFrame, pd.DataFrame]:
     """Return a frame of len(txs) rows and exactly art.feature_names columns."""
     base, vframe = _frames(txs)
     base = base.sort_values(fcfg.TIME, kind="mergesort").reset_index(drop=True)
@@ -72,6 +72,10 @@ def featurize(txs: list[RawTransaction], art: Artifacts, cur) -> pd.DataFrame:
         [base, pd.DataFrame(rows, index=base.index).astype("float32")], axis=1
     )
 
+    base["productcd_key"] = base["productcd"].fillna(NULL_SENTINEL).astype(str)
+    base["devicetype_key"] = base["devicetype"].fillna(NULL_SENTINEL).astype(str)
+    hist = base[STORE_COLUMNS].copy()
+
     base = base.merge(missingness.v_missingness_frame(vframe), on=fcfg.KEY, how="left")
     base = base.merge(
         vframe[[fcfg.KEY] + list(art.encoder.v_keep_)], on=fcfg.KEY, how="left"
@@ -80,4 +84,4 @@ def featurize(txs: list[RawTransaction], art: Artifacts, cur) -> pd.DataFrame:
 
     X = art.encoder.transform(base)[art.feature_names]
     X.index = base[fcfg.KEY].to_numpy()
-    return X
+    return X, hist

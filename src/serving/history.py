@@ -145,6 +145,7 @@ def _store_frame(upto_day: int = SEAL_DAY) -> pd.DataFrame:
     base = base.loc[base["tx_day"] < upto_day].copy()
     base["productcd_key"] = base["productcd"].fillna(NULL_SENTINEL).astype(str)
     base["devicetype_key"] = base["devicetype"].fillna(NULL_SENTINEL).astype(str)
+    base["transactionamt"] = base["transactionamt"].astype("float64")
     return base[STORE_COLUMNS]
 
 

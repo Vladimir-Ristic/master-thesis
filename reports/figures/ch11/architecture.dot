@@ -1,0 +1,61 @@
+digraph ch11_architecture {
+  graph [rankdir=LR, fontname="DejaVu Sans", fontsize=10, splines=ortho,
+         nodesep=0.55, ranksep=0.34, bgcolor="white", compound=true, newrank=true];
+  node  [fontname="DejaVu Sans", fontsize=9, shape=box, style=filled,
+         fillcolor="white", color="#222222", penwidth=1.0, margin="0.10,0.06"];
+  edge  [fontname="DejaVu Sans", fontsize=8, color="#222222", arrowsize=0.7];
+
+  client [label="caller", shape=ellipse, fillcolor="#f4f4f4"];
+  flow   [label="Prefect flow  ·  score_batch\none day, chunks of 200\nPOST /score/batch",
+          style="filled,dashed", fillcolor="#f4f4f4"];
+
+  subgraph cluster_api {
+    label="thesis_api  —  FastAPI / uvicorn"; fontsize=9;
+    color="#666666"; style=rounded; penwidth=1.0;
+    featurize [label="featurize\nrebuild 290 features"];
+    baked     [label="image artifacts\nencoder · contract · group maps",
+               shape=note, fillcolor="#fbfbfb"];
+    scorer    [label="score\nPlatt · threshold 0.0870"];
+    explainer [label="explain\nTreeSHAP, flagged only"];
+    persist   [label="persist"];
+  }
+
+  subgraph cluster_pg {
+    label="thesis_postgres"; fontsize=9; color="#666666"; style=rounded;
+    staging  [label="raw staging\n(Ch. 7)", shape=cylinder, fillcolor="#f4f4f4"];
+    features [label="features_v1\n(Ch. 8)", shape=cylinder, fillcolor="#f4f4f4"];
+    history  [label="tx_history\n511,998 rows", shape=cylinder];
+    preds    [label="predictions\ndecision log", shape=cylinder];
+  }
+
+  subgraph cluster_mlf {
+    label="thesis_mlflow"; fontsize=9; color="#666666"; style=rounded;
+    registry [label="registry\nfraud_detector v1", shape=component];
+    runs     [label="run history\n(Ch. 9)", shape=cylinder, fillcolor="#f4f4f4"];
+  }
+
+  ch12 [label="Ch. 12\ndrift monitoring", style="filled,dashed", fillcolor="#f4f4f4"];
+
+  client -> featurize [label="POST /score"];
+  flow   -> featurize [style=dashed];
+  baked  -> featurize [style=dotted, arrowhead=none];
+
+  featurize -> scorer;
+  scorer -> explainer [label="if flagged"];
+  scorer -> persist;
+  explainer -> persist [style=dashed];
+
+  history -> featurize [taillabel="past-only\naggregates", labeldistance=3.7, labelangle=18];
+  persist -> history [label="write-back"];
+  persist -> preds;
+
+  registry -> baked [style=dashed, taillabel="load at startup",
+                     labeldistance=5.0, labelangle=-18];
+  staging -> features [style=dotted, arrowhead=none, label="offline"];
+  preds -> ch12 [style=dashed];
+  runs  -> ch12 [style=dashed];
+
+  { rank=same; client; }
+  { rank=same; featurize; baked; flow; }
+  { rank=same; registry; ch12; }
+}
