@@ -1,0 +1,36 @@
+.PHONY: ch12-test ch12-score ch12-reference ch12-drift ch12-signals ch12-trigger ch12-inject ch12-flow ch12-deploy ch12-validate ch12-sensitivity ch12-figures ch12
+
+ch12-test:
+	pytest tests/ch12 -q
+
+ch12-score:
+	python -m src.flows.score_window --start 127 --end 147
+
+ch12-reference:
+	python -m src.monitor.reference
+
+ch12-drift:
+	python -m src.monitor.drift
+
+ch12-validate:
+	python -m src.monitor.validate
+
+ch12-figures:
+	python -m src.monitor.report
+
+ch12-signals:
+	python -m src.monitor.signals
+
+ch12-trigger:
+	python -m src.monitor.trigger
+
+ch12-inject:
+	python -m src.monitor.inject
+
+ch12-deploy:
+	python -m src.flows.deployments
+
+ch12-sensitivity:
+	python -m src.monitor.sensitivity
+
+ch12: ch12-test ch12-reference ch12-drift ch12-signals ch12-trigger ch12-validate ch12-figures

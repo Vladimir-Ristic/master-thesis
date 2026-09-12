@@ -1,0 +1,10 @@
+check,result,detail
+test partition sealed,PASS,0 test-partition rows in the decision log
+window inside validation,PASS,"days 127-149, validation is 127-154"
+reference sources unchanged,PASS,train and valid parquet md5 match the frozen reference
+threshold at full precision,PASS,0.08704082880739572
+monitored set well formed,PASS,"20 features, all in the 290-column contract, all under 30% missing"
+binning reproduces the reference,PASS,worst self-PSI 0.00e+00 ()
+commissioning point reproduces Table 9.2,PASS,"14629 of 77822 flagged, review rate 0.187980"
+decision log has no duplicates,PASS,"61728 rows, 0 duplicated transactionids"
+baseline window triggers no retrain,PASS,"days 127-147: {'no_action': 16, 'investigate': 5}"

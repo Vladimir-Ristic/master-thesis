@@ -1,3 +1,4 @@
+-include Makefile.ch12
 -include Makefile.ch9
 -include Makefile.ch10
 -include Makefile.ch11

@@ -1,0 +1,10 @@
+Quantity,Monitoring window,Injected days,Threshold
+Days observed,21 (127-147),2 (148-149),-
+Transactions scored,"56,379","5,349",-
+Review rate,0.1551 to 0.2241,0.2717 to 0.2840,0.1880 ±25%
+Score PSI,0.0017 to 0.0168,0.0961 to 0.1406,0.20
+Max feature PSI (structural),0.5626 to 1.1626,1.8991 to 2.2067,"reported, not alerted"
+PSI excess (emergent),0.0003 to 1.0570,1.8812 to 2.1922,0.25
+"Named attribution shift, pp",-2.8 to +3.6,+0.2 to +1.9,±5
+"Recall, 7-day pool",0.8247 to 0.9009,0.8434 to 0.8474,0.8665 -10%
+Verdicts,"no_action 16, investigate 5","investigate 1, retrain 1",-

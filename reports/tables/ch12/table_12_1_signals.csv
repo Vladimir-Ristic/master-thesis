@@ -1,0 +1,7 @@
+Signal,Source,Reference,Statistic,Threshold,Action
+Feature drift,"predictions.features, 20 monitored columns","train_v1, days 1-119","PSI on frozen bins, excess over window level",excess > 0.25,investigate
+Score drift,predictions.probability,validation commissioning distribution,PSI on frozen deciles,> 0.20,investigate
+Review-rate drift,predictions.decision,0.187980,relative deviation,> ±25%,investigate
+Attribution drift,predictions.reason_codes,pooled window named share 88.1%,shift in named share,> ±5 pp,investigate
+Delayed performance,"matured labels, 7-day pool",recall 0.866515,relative drop,> 10%,retrain
+Combined rule,the five signals above,-,"performance breach, or feature and review-rate breach together",persisting 2 days,retrain

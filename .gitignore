@@ -46,3 +46,5 @@ artifacts/features_v1/*.joblib
 .~lock.*
 *.TMP
 .~lock.*
+logs/
+reports/monitor/.html

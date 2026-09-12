@@ -19,3 +19,4 @@ pytest
 optuna
 httpx
 prefect
+evidently==0.7.23
