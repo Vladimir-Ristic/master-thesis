@@ -18,3 +18,4 @@ joblib
 pytest
 optuna
 httpx
+prefect

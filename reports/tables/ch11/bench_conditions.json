@@ -1,0 +1,25 @@
+{
+  "server": {
+    "status": "ok",
+    "model": "fraud_detector",
+    "version": "1",
+    "source": "models:/fraud_detector/1",
+    "n_features": 290,
+    "n_trees": 750,
+    "threshold": 0.08704082880739572,
+    "decision_rule": "example-dependent, global",
+    "explain_flagged_only": true,
+    "startup_seconds": 9.44,
+    "uptime_seconds": 346.9,
+    "omp_num_threads": "1",
+    "cpu_count": 4
+  },
+  "client_platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "client_cpu_count": 4,
+  "n_single": 60,
+  "batch_sizes": [
+    10,
+    50,
+    200
+  ]
+}

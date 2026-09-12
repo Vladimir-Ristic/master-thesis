@@ -1,0 +1,10 @@
+check,passed,detail
+1. history store holds no test-partition rows,True,"max dt 13,391,998 < 13,392,000 over 511,998 rows"
+2. registered model matches the pinned contract,True,"290 features, 750 trees"
+3. fitted encoder produces the contract,True,290 encoder features
+4. Chapter 10 maps cover the contract,True,"12 families, 13 groups over 143 columns"
+5. threshold reproduces Chapter 9's review queue,True,"14,629 flagged at full precision 0.08704082880739572"
+6. calibrator strictly monotone,True,a = 0.558545 > 0
+7. a transaction never enters its own aggregates,True,"cnt_hist 9 == 9 strictly before, 10 inclusive"
+8. serving path changes no decision,True,"145 of 1,450,000 cells differ (0.01000%), 0 decisions changed"
+9. serving environment matches the registered model's,True,7 packages match the registry

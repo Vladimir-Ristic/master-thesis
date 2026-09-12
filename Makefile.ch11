@@ -32,7 +32,7 @@ ch11-bench:
 
 ## Prefect batch scoring flow over one validation day.
 ch11-flow:
-	$(PY) -m src.flows.score_batch --day 127
+    PREFECT_SERVER_ANALYTICS_ENABLED=false $(PY) -m src.flows.score_batch --day 127
 
 ## Protocol checks.
 ch11-validate:

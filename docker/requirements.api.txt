@@ -1,0 +1,15 @@
+fastapi==0.141.1
+joblib==1.6.0
+lightgbm==4.7.0
+mlflow==3.15.2
+numpy==2.5.2
+pandas==2.3.3
+psycopg2-binary==2.9.12
+pyarrow==25.0.1
+pydantic==2.13.5
+python-dotenv==1.2.2
+scikit-learn==1.9.0
+scipy==1.18.1
+shap==0.52.0
+skops==0.14.0
+uvicorn==0.52.4

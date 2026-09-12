@@ -24,7 +24,7 @@ import pandas as pd
 
 from src.features import config as fcfg
 from src.features import entity, transforms
-from src.serving.db import connect
+from src.serving.db import connect, create_tables
 
 NULL_SENTINEL = "__NULL__"
 SEAL_DAY = 155  # days 155-182 are the test partition and are never stored
@@ -163,15 +163,6 @@ def backfill(upto_day: int = SEAL_DAY) -> int:
         n, lo, hi = cur.fetchone()
     print(f"tx_history: {n:,} rows, dt {lo}-{hi} (days {lo // 86400}-{hi // 86400})")
     return n
-
-
-def create_tables() -> None:
-    sql = (fcfg.PROJECT_ROOT / "src" / "db" / "create_serving_tables.sql").read_text()
-    with connect() as conn, conn.cursor() as cur:
-        cur.execute(sql)
-        conn.commit()
-    print("serving tables created")
-
 
 def main() -> None:
     ap = argparse.ArgumentParser()
