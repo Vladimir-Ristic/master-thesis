@@ -1,0 +1,35 @@
+.PHONY: ch13-test ch13-spec ch13-open ch13-run ch13-metrics ch13-arms ch13-attribution ch13-monitor ch13-validate ch13-figures ch13
+
+ch13-test:
+	pytest tests/ch13 -q
+
+ch13-spec:
+	python -m src.eval.spec
+
+ch13-arms:
+	python -m src.eval.rq1
+
+# --- breaks the seal; deliberately outside the ch13 chain ------------------
+ch13-open:
+	python -m src.eval.seal --open
+
+ch13-run:
+	python -m src.flows.score_window --start 155 --end 182 --batch-size 200
+
+# --- everything below reads the persisted decision log --------------------
+ch13-metrics:
+	python -m src.eval.metrics
+
+ch13-attribution:
+	python -m src.eval.attribution
+
+ch13-monitor:
+	python -m src.eval.monitor_test
+
+ch13-validate:
+	python -m src.eval.validate
+
+ch13-figures:
+	python -m src.eval.report
+
+ch13: ch13-test ch13-metrics ch13-arms ch13-attribution ch13-monitor ch13-validate ch13-figures

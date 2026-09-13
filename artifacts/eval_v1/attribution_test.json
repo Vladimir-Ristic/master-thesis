@@ -1,0 +1,38 @@
+{
+  "basis": "two-block sum-then-absolute, Chapter 10 headline",
+  "chapter10_validation": {
+    "n_rows": 77822,
+    "named_reason_coverage": 0.9922067268252666,
+    "named_share_abs_then_sum": 0.8301545498822079,
+    "named_share_two_block": 0.7763829992398446
+  },
+  "spec_deviation": "The specification named a 5,000-row sample for RQ2, assuming Chapter 10's figure was sampled. Chapter 10 used the full validation partition. Both are computed; the full-partition figure is the like-for-like comparison.",
+  "test_full_partition": {
+    "anon_share_abs_then_sum": 0.17754466977041217,
+    "anon_share_two_block": 0.22955481196959768,
+    "cancellation_anon": 0.330539256654841,
+    "cancellation_named": 0.239482460248641,
+    "n_anonymised": 143,
+    "n_named": 147,
+    "n_rows": 78542,
+    "named_share_abs_then_sum": 0.8224553302295878,
+    "named_share_two_block": 0.7704451880304023
+  },
+  "test_sample_5000": {
+    "anon_share_abs_then_sum": 0.17670767149545427,
+    "anon_share_two_block": 0.22828418466406938,
+    "cancellation_anon": 0.32409509631748273,
+    "cancellation_named": 0.23515562475838592,
+    "n_anonymised": 143,
+    "n_named": 147,
+    "n_rows": 5000,
+    "named_share_abs_then_sum": 0.8232923285045457,
+    "named_share_two_block": 0.7717158153359306
+  },
+  "test_served": {
+    "flagged_rows": 16812,
+    "named_reason_coverage": 0.9895312871758268,
+    "reason_code_named_share": 0.8837140137996669,
+    "reason_codes_emitted": 50436
+  }
+}

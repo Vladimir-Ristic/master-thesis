@@ -1,7 +1,8 @@
--include Makefile.ch12
 -include Makefile.ch9
 -include Makefile.ch10
 -include Makefile.ch11
+-include Makefile.ch12
+-include Makefile.ch13
 .PHONY: ch8 ch8-extract ch8-build ch8-validate ch8-figures ch8-publish ch8-test ch8-clean
 
 PY := python3

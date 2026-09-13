@@ -48,3 +48,5 @@ artifacts/features_v1/*.joblib
 .~lock.*
 logs/
 reports/monitor/.html
+reports/monitor/
+artifacts/eval_v1/ch12_snapshot_*.csv

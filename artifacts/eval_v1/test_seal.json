@@ -1,0 +1,20 @@
+{
+  "chapter": 13,
+  "digests_at_open": {
+    "artifacts/monitor_v1/reference.json": "0fafb81b9f3e9391dfc38d3605333f2d",
+    "data/interim/base.parquet": "4f4555230c94a152e3781231033bb191",
+    "data/interim/vcols.parquet": "8285f675b73a5d9009ee35a128ee83ca",
+    "data/processed/test_v1.parquet": "781176784c6ca1a062c351a0f1a2b501"
+  },
+  "open_count": 1,
+  "opened_at": "2026-09-12T20:22:25+00:00",
+  "partition": {
+    "day_max": 182,
+    "day_min": 155,
+    "expected_rows": 78542
+  },
+  "pre_run_decision_log_rows": 61728,
+  "spec_md5": "2072916ece30ad32afb52e1930e1d802",
+  "spec_path": "/home/vladimir/projects/master-thesis/artifacts/eval_v1/measurement_spec.json",
+  "statement": "The test partition of the IEEE-CIS dataset was read for the first time at the timestamp above, under the specification whose digest is recorded here, and was not read before it."
+}

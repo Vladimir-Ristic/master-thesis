@@ -1,0 +1,19 @@
+check,result,detail
+seal opened exactly once,PASS,opened 2026-09-12T20:22:25+00:00
+specification frozen at open,PASS,2072916ece30ad32afb52e1930e1d802 == 2072916ece30ad32afb52e1930e1d802
+test partition fully scored,PASS,"78542 rows, expected 78542"
+every row labelled,PASS,0 pending
+decision log has no duplicates,PASS,0 duplicated ids
+Chapter 12 rows untouched,PASS,"61728 rows, expected 61728"
+days scored in chronological order,PASS,"days 155-182, 28 days, first_scored monotonic=True"
+every test day present,PASS,28 of 28 days
+threshold identical across four sources,PASS,0.08704082880739572
+frozen reference unchanged,PASS,0fafb81b9f3e9391dfc38d3605333f2d
+sealed sources unchanged,PASS,4 digests match
+Chapter 12 drift table intact,PASS,max tx_day 149
+no selection on test,PASS,specification records selection_on_test = false
+resampling confined to training,PASS,inside the training fit only; never applied to validation or test data
+"TreeSHAP only, no KernelSHAP",PASS,specification records kernel_shap = false
+RQ2 specification deviation recorded,PASS,"full partition and 5,000 sample both reported"
+both emergent-drift variants computed,PASS,"carried_forward fired 24/28, self_referential 3/28"
+deployed model unchanged,PASS,fraud_detector v1

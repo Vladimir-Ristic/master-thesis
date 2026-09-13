@@ -1,0 +1,156 @@
+{
+  "chapter": 13,
+  "decision_policy": {
+    "ca_review": 4.0,
+    "cost_matrix": "example-dependent (Bahnsen): review costs CA_REVIEW; a missed fraud costs its own amount",
+    "review_literal": "review",
+    "rule": "example-dependent, global",
+    "threshold": 0.08704082880739572,
+    "threshold_hex": "0x1.6484ec924fde8p-4"
+  },
+  "digests": {
+    "artifacts/monitor_v1/reference.json": "0fafb81b9f3e9391dfc38d3605333f2d",
+    "data/interim/base.parquet": "4f4555230c94a152e3781231033bb191",
+    "data/interim/vcols.parquet": "8285f675b73a5d9009ee35a128ee83ca",
+    "data/processed/test_v1.parquet": "781176784c6ca1a062c351a0f1a2b501"
+  },
+  "excluded_deliberately": [
+    "no retraining or refit of the deployed model",
+    "no threshold reselection",
+    "no hindsight-optimal threshold",
+    "no fix to the windows.py prefix-sum variance defect",
+    "no second read of the test partition"
+  ],
+  "metrics": {
+    "calibration": [
+      "brier",
+      "mean_predicted_probability",
+      "prevalence"
+    ],
+    "cost": [
+      "cost_ed",
+      "savings_ed"
+    ],
+    "discrimination": [
+      "pr_auc",
+      "no_skill_pr_auc",
+      "lift_over_no_skill",
+      "roc_auc"
+    ],
+    "note": "PR-AUC is reported with its own no-skill baseline beside it; the quantity compared across partitions is lift over baseline, because PR-AUC is prevalence-sensitive.",
+    "operating_point": [
+      "flagged",
+      "review_rate",
+      "precision",
+      "recall",
+      "fpr"
+    ],
+    "primary": "pr_auc"
+  },
+  "monitoring": {
+    "both_reported": true,
+    "emergent_level_variants": [
+      "ch12_window_medians_carried_forward",
+      "test_window_own_medians"
+    ],
+    "label_maturation": "7-day pooling retained even though every test label is available, so the lagging signal is comparable with Chapter 12's",
+    "reference": "artifacts/monitor_v1/reference.json, NOT regenerated",
+    "signals": [
+      "feature_psi_20",
+      "score_psi",
+      "review_rate",
+      "attribution_named_share",
+      "recall_7day_pooled",
+      "verdict"
+    ]
+  },
+  "partition": {
+    "day_max": 182,
+    "day_min": 155,
+    "expected_rows": 78542,
+    "seal_enforced_by": "day filter, not file access",
+    "source_of_payloads": "src.flows.score_batch.load_day (data/interim)"
+  },
+  "principle": "The test partition is opened once, under this specification. Whatever these measurements produce is what Chapter 13 reports.",
+  "rq1": {
+    "arms": [
+      "lgbm__natural",
+      "lgbm__weighted",
+      "lgbm__smote",
+      "lgbm__smote_weighted"
+    ],
+    "decision_rules_compared": [
+      "default 0.50",
+      "example-dependent, global"
+    ],
+    "deployed_arm_source": "the registered model, not a refit",
+    "model_family": "held fixed at LightGBM; only the imbalance treatment varies",
+    "question": "class imbalance handling, out of sample",
+    "refit": "comparison arms refit on the training partition from Chapter 9 best_params; each loads its own calibrator",
+    "resampling": "inside the training fit only; never applied to validation or test data",
+    "selection_on_test": false
+  },
+  "rq2": {
+    "kernel_shap": false,
+    "served": {
+      "compare_to": "Chapter 12 pooled 88.1% and 99.2%",
+      "named_reason_coverage": true,
+      "reason_code_named_share": true
+    },
+    "whole_sample": {
+      "compare_to": "Chapter 10 named/anonymised 77.6/22.4",
+      "method": "TreeSHAP",
+      "n": 5000,
+      "seed": 42
+    }
+  },
+  "rq3": {
+    "operational": [
+      "wall_clock",
+      "throughput_ms_per_tx",
+      "failed_requests"
+    ],
+    "parity_recheck": {
+      "compare_to": "Table 11.1: 287 of 290 exact, 0 decisions changed",
+      "n": 5000,
+      "seed": 42
+    }
+  },
+  "run": {
+    "batch_size": 200,
+    "labels_joined": "after the decision log is written, never during",
+    "order": "strictly ascending by transaction day",
+    "path": "HTTP POST to the Chapter 11 service, unchanged",
+    "run_label": "test",
+    "write_back_to_tx_history": true
+  },
+  "spec_version": "1.0",
+  "uncertainty": {
+    "applied_to": [
+      "pr_auc",
+      "precision",
+      "recall"
+    ],
+    "interval": "percentile, 95%",
+    "method": "day-block bootstrap; the resampled unit is the transaction day, not the row, because entities and days are shared",
+    "n_resamples": 2000,
+    "seed": 42
+  },
+  "validation_comparators": {
+    "arm": "lgbm__natural",
+    "brier_calibrated": 0.021663394683080612,
+    "cost_ed": 106661.17780733109,
+    "flagged": 14629,
+    "fpr": 0.16418168517656448,
+    "n": 77822,
+    "no_skill_pr_auc": 0.033885019660250315,
+    "pr_auc": 0.5988940079188009,
+    "precision": 0.15619659580285733,
+    "recall": 0.8665149791429655,
+    "review_rate": 0.18798026265066434,
+    "roc_auc": 0.9263010474806815,
+    "savings_ed": 0.7351761434103133,
+    "source": "table_9_4_decision_rules.csv + selection_summary.json"
+  },
+  "written_at": "2026-09-12T20:07:32+00:00"
+}
